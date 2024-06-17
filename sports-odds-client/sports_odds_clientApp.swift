@@ -11,7 +11,17 @@ import SwiftUI
 struct sports_odds_clientApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let client = URLSessionHTTPClient()
+            let feedLoader = RemoteOddsFeedLoader(client: client)
+            let imageLoader = RemoteImageLoader(client: client)
+            let viewModel = HomeViewModel(
+                baseUrl: Environment.dev.baseURL,
+                feedloader: feedLoader,
+                imageLoader: imageLoader
+            )
+            
+            HomeView(viewModel: viewModel)
         }
     }
 }
+

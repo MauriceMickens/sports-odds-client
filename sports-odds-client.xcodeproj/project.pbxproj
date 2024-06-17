@@ -8,17 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		DEDCB0012C1F967100B4A684 /* sports_odds_clientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */; };
-		DEDCB0032C1F967100B4A684 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0022C1F967100B4A684 /* ContentView.swift */; };
 		DEDCB0052C1F967400B4A684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDCB0042C1F967400B4A684 /* Assets.xcassets */; };
 		DEDCB0082C1F967400B4A684 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDCB0072C1F967400B4A684 /* Preview Assets.xcassets */; };
+		DEDCB0152C1F97E400B4A684 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0142C1F97E400B4A684 /* HomeView.swift */; };
+		DEDCB01C2C1F99CB00B4A684 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0192C1F99CB00B4A684 /* HTTPClient.swift */; };
+		DEDCB01D2C1F99CB00B4A684 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB01A2C1F99CB00B4A684 /* URLSessionHTTPClient.swift */; };
+		DEDCB01E2C1F99CB00B4A684 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB01B2C1F99CB00B4A684 /* NetworkError.swift */; };
+		DEDCB0242C1F9AAF00B4A684 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB01F2C1F9AAF00B4A684 /* RemoteImageLoader.swift */; };
+		DEDCB0252C1F9AAF00B4A684 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0202C1F9AAF00B4A684 /* DataMapper.swift */; };
+		DEDCB0262C1F9AAF00B4A684 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0212C1F9AAF00B4A684 /* ImageLoader.swift */; };
+		DEDCB0272C1F9AAF00B4A684 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0222C1F9AAF00B4A684 /* DataError.swift */; };
+		DEDCB0282C1F9AAF00B4A684 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0232C1F9AAF00B4A684 /* DataLoader.swift */; };
+		DEDCB02B2C1F9AF900B4A684 /* OddsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0292C1F9AF900B4A684 /* OddsResponse.swift */; };
+		DEDCB02C2C1F9AF900B4A684 /* Odds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB02A2C1F9AF900B4A684 /* Odds.swift */; };
+		DEDCB02F2C1F9CCD00B4A684 /* RemoteDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */; };
+		DEDCB0302C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB02E2C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift */; };
+		DEDCB0352C1FA06200B4A684 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */; };
+		DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0362C1FABFE00B4A684 /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DEDCAFFD2C1F967100B4A684 /* sports-odds-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sports-odds-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sports_odds_clientApp.swift; sourceTree = "<group>"; };
-		DEDCB0022C1F967100B4A684 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DEDCB0042C1F967400B4A684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEDCB0072C1F967400B4A684 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DEDCB0142C1F97E400B4A684 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DEDCB0192C1F99CB00B4A684 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		DEDCB01A2C1F99CB00B4A684 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		DEDCB01B2C1F99CB00B4A684 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		DEDCB01F2C1F9AAF00B4A684 /* RemoteImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
+		DEDCB0202C1F9AAF00B4A684 /* DataMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
+		DEDCB0212C1F9AAF00B4A684 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		DEDCB0222C1F9AAF00B4A684 /* DataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
+		DEDCB0232C1F9AAF00B4A684 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		DEDCB0292C1F9AF900B4A684 /* OddsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsResponse.swift; sourceTree = "<group>"; };
+		DEDCB02A2C1F9AF900B4A684 /* Odds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Odds.swift; sourceTree = "<group>"; };
+		DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataError.swift; sourceTree = "<group>"; };
+		DEDCB02E2C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteOddsFeedLoader.swift; sourceTree = "<group>"; };
+		DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DEDCB0362C1FABFE00B4A684 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */,
-				DEDCB0022C1F967100B4A684 /* ContentView.swift */,
+				DEDCB0312C1F9FEC00B4A684 /* Home */,
+				DEDCB00E2C1F973200B4A684 /* OddsFeed */,
+				DEDCB0132C1F97B600B4A684 /* Shared */,
+				DEDCB0162C1F988600B4A684 /* Extensions */,
 				DEDCB0042C1F967400B4A684 /* Assets.xcassets */,
 				DEDCB0062C1F967400B4A684 /* Preview Content */,
 			);
@@ -65,6 +96,113 @@
 				DEDCB0072C1F967400B4A684 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DEDCB00E2C1F973200B4A684 /* OddsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				DEDCB0122C1F978C00B4A684 /* Views */,
+				DEDCB0112C1F978200B4A684 /* ViewModels */,
+				DEDCB0102C1F977600B4A684 /* Models */,
+				DEDCB00F2C1F976D00B4A684 /* API */,
+			);
+			path = OddsFeed;
+			sourceTree = "<group>";
+		};
+		DEDCB00F2C1F976D00B4A684 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */,
+				DEDCB02E2C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		DEDCB0102C1F977600B4A684 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DEDCB02A2C1F9AF900B4A684 /* Odds.swift */,
+				DEDCB0292C1F9AF900B4A684 /* OddsResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DEDCB0112C1F978200B4A684 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DEDCB0122C1F978C00B4A684 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDCB0132C1F97B600B4A684 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DEDCB0362C1FABFE00B4A684 /* Environment.swift */,
+				DEDCB0172C1F991700B4A684 /* Networking */,
+				DEDCB0182C1F993300B4A684 /* Data */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DEDCB0162C1F988600B4A684 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DEDCB0172C1F991700B4A684 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DEDCB0192C1F99CB00B4A684 /* HTTPClient.swift */,
+				DEDCB01B2C1F99CB00B4A684 /* NetworkError.swift */,
+				DEDCB01A2C1F99CB00B4A684 /* URLSessionHTTPClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DEDCB0182C1F993300B4A684 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DEDCB0222C1F9AAF00B4A684 /* DataError.swift */,
+				DEDCB0232C1F9AAF00B4A684 /* DataLoader.swift */,
+				DEDCB0202C1F9AAF00B4A684 /* DataMapper.swift */,
+				DEDCB0212C1F9AAF00B4A684 /* ImageLoader.swift */,
+				DEDCB01F2C1F9AAF00B4A684 /* RemoteImageLoader.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DEDCB0312C1F9FEC00B4A684 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DEDCB0142C1F97E400B4A684 /* HomeView.swift */,
+				DEDCB0322C1FA00E00B4A684 /* Views */,
+				DEDCB0332C1FA01900B4A684 /* ViewModels */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DEDCB0322C1FA00E00B4A684 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDCB0332C1FA01900B4A684 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +275,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDCB0032C1F967100B4A684 /* ContentView.swift in Sources */,
+				DEDCB0282C1F9AAF00B4A684 /* DataLoader.swift in Sources */,
+				DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */,
+				DEDCB02C2C1F9AF900B4A684 /* Odds.swift in Sources */,
+				DEDCB0242C1F9AAF00B4A684 /* RemoteImageLoader.swift in Sources */,
+				DEDCB0252C1F9AAF00B4A684 /* DataMapper.swift in Sources */,
+				DEDCB0152C1F97E400B4A684 /* HomeView.swift in Sources */,
 				DEDCB0012C1F967100B4A684 /* sports_odds_clientApp.swift in Sources */,
+				DEDCB01C2C1F99CB00B4A684 /* HTTPClient.swift in Sources */,
+				DEDCB01D2C1F99CB00B4A684 /* URLSessionHTTPClient.swift in Sources */,
+				DEDCB02F2C1F9CCD00B4A684 /* RemoteDataError.swift in Sources */,
+				DEDCB0272C1F9AAF00B4A684 /* DataError.swift in Sources */,
+				DEDCB02B2C1F9AF900B4A684 /* OddsResponse.swift in Sources */,
+				DEDCB0262C1F9AAF00B4A684 /* ImageLoader.swift in Sources */,
+				DEDCB0302C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift in Sources */,
+				DEDCB0352C1FA06200B4A684 /* HomeViewModel.swift in Sources */,
+				DEDCB01E2C1F99CB00B4A684 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

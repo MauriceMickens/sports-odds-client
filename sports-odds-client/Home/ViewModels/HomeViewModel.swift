@@ -14,11 +14,16 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
     
     @Published var loadingState: LoadingState<[Odds]> = .loading
     @Published var hasMore = true
-    @Published var selectedMarket: String = ""
+    @Published var selectedMarket: String = "" {
+        didSet {
+            filterOdds()
+        }
+    }
     
-    var objects: [Odds] = []
-    var activeSports: [String] = []
-    var activeMarkets: [Market] = []
+    @Published var objects: [Odds] = []
+    @Published var activeSports: [String] = []
+    @Published var activeMarkets: [Market] = []
+    @Published var filteredObjects: [Odds] = []
     
     private let baseUrl: URL
     private let remoteDataLoader: any DataLoader
@@ -76,8 +81,8 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
         let newOdds: [Odds] = try await remoteDataLoader.load(url: feedUrl)
         objects.append(contentsOf: newOdds)
         
-        if let selectedMarket = firstSport.value.markets.first?.key {
-            self.selectedMarket = selectedMarket
+        if let market = firstSport.value.markets.first {
+            self.selectedMarket = market.key
         }
         
         loadingState = .loaded(objects: objects)
@@ -85,11 +90,7 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
         hasMore = !newOdds.isEmpty
     }
     
-    func filterOdds(for market: String) {
-        loadingState = .loading
-        selectedMarket = market
-        loadingState = .loaded(
-            objects: objects.filter { $0.market == selectedMarket }
-        )
+    func filterOdds() {
+        filteredObjects = objects.filter { $0.market == selectedMarket }
     }
 }

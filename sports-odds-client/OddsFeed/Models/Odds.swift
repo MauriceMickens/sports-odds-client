@@ -77,7 +77,7 @@ struct Odds: Identifiable, Decodable, Hashable {
             homeTeam: "Random Home Team",
             gameDate: "2024-06-23 15:00:00 EDT-0400",
             sport: "basketball_nba",
-            playerImageUrls: .random,
+            playerImageUrls: nil,
             bookmakers: [
                 Bookmaker.random,
                 Bookmaker.random

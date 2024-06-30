@@ -12,7 +12,7 @@ struct HomeView: View {
     
     var gridColumns: [GridItem] {
         [
-            GridItem(.flexible(minimum: 100, maximum: 160)),
+            GridItem(.flexible(minimum: 150, maximum: 160)),
             GridItem(.flexible(minimum: 150, maximum: 160))
         ]
     }
@@ -22,7 +22,10 @@ struct HomeView: View {
             SportsScrollRow(sports: viewModel.activeSports)
                 .padding(.horizontal)
             
-            MarketsScrollRow(viewModel: viewModel)
+            MarketsScrollRow(
+                selectedMarket: $viewModel.selectedMarket,
+                activeMarkets: $viewModel.activeMarkets
+            )
             
             ScrollView {
                 LazyVGrid(columns: gridColumns, spacing: 15) {
@@ -30,10 +33,9 @@ struct HomeView: View {
                         switch viewModel.loadingState {
                         case .loading:
                             ProgressView()
-                        case .loaded(let objects):
-                            ForEach(objects) { odds in
-                                CardView(odds: odds)
-                                    .aspectRatio(0.67, contentMode: .fit)
+                        case .loaded:
+                            ForEach(viewModel.filteredObjects) { odds in
+                                CardView(viewModel: .init(odds: odds))
                             }
                         case .error(let error):
                             Text(error.reason)
@@ -73,14 +75,15 @@ struct SportsScrollRow: View {
 }
 
 struct MarketsScrollRow: View {
-    @ObservedObject var viewModel: HomeViewModel
+    @Binding var selectedMarket: String
+    @Binding var activeMarkets: [Market]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(viewModel.activeMarkets) { market in
+                ForEach(activeMarkets) { market in
                     Button(action: {
-                        viewModel.filterOdds(for: market.key)
+                        selectedMarket = market.key
                     }) {
                         Text(market.description)
                             .foregroundStyle(.white)

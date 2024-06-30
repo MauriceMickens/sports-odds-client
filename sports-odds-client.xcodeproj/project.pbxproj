@@ -30,6 +30,7 @@
 		DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0362C1FABFE00B4A684 /* Environment.swift */; };
 		DEF3209D2C31BC9B0017BA11 /* HomeViewModel+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */; };
 		DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209E2C31BD1F0017BA11 /* Sport.swift */; };
+		DEF320A12C3205450017BA11 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A02C3205450017BA11 /* CardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		DEDCB0362C1FABFE00B4A684 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+Factory.swift"; sourceTree = "<group>"; };
 		DEF3209E2C31BD1F0017BA11 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		DEF320A02C3205450017BA11 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				DEDCB0142C1F97E400B4A684 /* HomeView.swift */,
-				DE6867A92C28E07400193745 /* CardView.swift */,
 				DEDCB0322C1FA00E00B4A684 /* Views */,
 				DEDCB0332C1FA01900B4A684 /* ViewModels */,
 				DE2A64E42C2F9C6900FE27F3 /* Models */,
@@ -214,6 +215,7 @@
 		DEDCB0322C1FA00E00B4A684 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE6867A92C28E07400193745 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +226,7 @@
 				DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */,
 				DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */,
 				DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */,
+				DEF320A02C3205450017BA11 /* CardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF320A12C3205450017BA11 /* CardViewModel.swift in Sources */,
 				DEDCB0282C1F9AAF00B4A684 /* DataLoader.swift in Sources */,
 				DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */,
 				DEDCB02C2C1F9AF900B4A684 /* Odds.swift in Sources */,

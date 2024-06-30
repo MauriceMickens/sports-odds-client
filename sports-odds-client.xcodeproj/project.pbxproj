@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE2A64E62C2F9C9600FE27F3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A64E52C2F9C9600FE27F3 /* Config.swift */; };
+		DE6867AA2C28E07400193745 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6867A92C28E07400193745 /* CardView.swift */; };
+		DED1A4B12C305EE500C1BC6F /* RemoteDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B02C305EE500C1BC6F /* RemoteDataLoader.swift */; };
+		DED1A4B32C30642300C1BC6F /* URL+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B22C30642300C1BC6F /* URL+Endpoints.swift */; };
+		DED1A4B62C30662500C1BC6F /* HomeViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */; };
+		DED1A4B82C3067D600C1BC6F /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B72C3067D600C1BC6F /* LoadingState.swift */; };
+		DED1A4BA2C3078DB00C1BC6F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B92C3078DB00C1BC6F /* ViewModel.swift */; };
 		DEDCB0012C1F967100B4A684 /* sports_odds_clientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */; };
 		DEDCB0052C1F967400B4A684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDCB0042C1F967400B4A684 /* Assets.xcassets */; };
 		DEDCB0082C1F967400B4A684 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDCB0072C1F967400B4A684 /* Preview Assets.xcassets */; };
@@ -14,20 +21,25 @@
 		DEDCB01C2C1F99CB00B4A684 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0192C1F99CB00B4A684 /* HTTPClient.swift */; };
 		DEDCB01D2C1F99CB00B4A684 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB01A2C1F99CB00B4A684 /* URLSessionHTTPClient.swift */; };
 		DEDCB01E2C1F99CB00B4A684 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB01B2C1F99CB00B4A684 /* NetworkError.swift */; };
-		DEDCB0242C1F9AAF00B4A684 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB01F2C1F9AAF00B4A684 /* RemoteImageLoader.swift */; };
 		DEDCB0252C1F9AAF00B4A684 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0202C1F9AAF00B4A684 /* DataMapper.swift */; };
-		DEDCB0262C1F9AAF00B4A684 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0212C1F9AAF00B4A684 /* ImageLoader.swift */; };
-		DEDCB0272C1F9AAF00B4A684 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0222C1F9AAF00B4A684 /* DataError.swift */; };
 		DEDCB0282C1F9AAF00B4A684 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0232C1F9AAF00B4A684 /* DataLoader.swift */; };
 		DEDCB02B2C1F9AF900B4A684 /* OddsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0292C1F9AF900B4A684 /* OddsResponse.swift */; };
 		DEDCB02C2C1F9AF900B4A684 /* Odds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB02A2C1F9AF900B4A684 /* Odds.swift */; };
 		DEDCB02F2C1F9CCD00B4A684 /* RemoteDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */; };
-		DEDCB0302C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB02E2C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift */; };
 		DEDCB0352C1FA06200B4A684 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */; };
 		DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0362C1FABFE00B4A684 /* Environment.swift */; };
+		DEF3209D2C31BC9B0017BA11 /* HomeViewModel+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */; };
+		DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209E2C31BD1F0017BA11 /* Sport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE2A64E52C2F9C9600FE27F3 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		DE6867A92C28E07400193745 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DED1A4B02C305EE500C1BC6F /* RemoteDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataLoader.swift; sourceTree = "<group>"; };
+		DED1A4B22C30642300C1BC6F /* URL+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Endpoints.swift"; sourceTree = "<group>"; };
+		DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+MockData.swift"; sourceTree = "<group>"; };
+		DED1A4B72C3067D600C1BC6F /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		DED1A4B92C3078DB00C1BC6F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DEDCAFFD2C1F967100B4A684 /* sports-odds-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sports-odds-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sports_odds_clientApp.swift; sourceTree = "<group>"; };
 		DEDCB0042C1F967400B4A684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,17 +48,15 @@
 		DEDCB0192C1F99CB00B4A684 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		DEDCB01A2C1F99CB00B4A684 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		DEDCB01B2C1F99CB00B4A684 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		DEDCB01F2C1F9AAF00B4A684 /* RemoteImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
 		DEDCB0202C1F9AAF00B4A684 /* DataMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
-		DEDCB0212C1F9AAF00B4A684 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		DEDCB0222C1F9AAF00B4A684 /* DataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		DEDCB0232C1F9AAF00B4A684 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		DEDCB0292C1F9AF900B4A684 /* OddsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsResponse.swift; sourceTree = "<group>"; };
 		DEDCB02A2C1F9AF900B4A684 /* Odds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Odds.swift; sourceTree = "<group>"; };
 		DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataError.swift; sourceTree = "<group>"; };
-		DEDCB02E2C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteOddsFeedLoader.swift; sourceTree = "<group>"; };
 		DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DEDCB0362C1FABFE00B4A684 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+Factory.swift"; sourceTree = "<group>"; };
+		DEF3209E2C31BD1F0017BA11 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE2A64E42C2F9C6900FE27F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE2A64E52C2F9C9600FE27F3 /* Config.swift */,
+				DEF3209E2C31BD1F0017BA11 /* Sport.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DED1A4BB2C3078EF00C1BC6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DED1A4B92C3078DB00C1BC6F /* ViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DEDCAFF42C1F967100B4A684 = {
 			isa = PBXGroup;
 			children = (
@@ -104,18 +131,8 @@
 				DEDCB0122C1F978C00B4A684 /* Views */,
 				DEDCB0112C1F978200B4A684 /* ViewModels */,
 				DEDCB0102C1F977600B4A684 /* Models */,
-				DEDCB00F2C1F976D00B4A684 /* API */,
 			);
 			path = OddsFeed;
-			sourceTree = "<group>";
-		};
-		DEDCB00F2C1F976D00B4A684 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */,
-				DEDCB02E2C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		DEDCB0102C1F977600B4A684 /* Models */ = {
@@ -145,8 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				DEDCB0362C1FABFE00B4A684 /* Environment.swift */,
-				DEDCB0172C1F991700B4A684 /* Networking */,
 				DEDCB0182C1F993300B4A684 /* Data */,
+				DEDCB0172C1F991700B4A684 /* Networking */,
+				DED1A4BB2C3078EF00C1BC6F /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -154,6 +172,7 @@
 		DEDCB0162C1F988600B4A684 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DED1A4B22C30642300C1BC6F /* URL+Endpoints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,11 +190,11 @@
 		DEDCB0182C1F993300B4A684 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DEDCB0222C1F9AAF00B4A684 /* DataError.swift */,
 				DEDCB0232C1F9AAF00B4A684 /* DataLoader.swift */,
 				DEDCB0202C1F9AAF00B4A684 /* DataMapper.swift */,
-				DEDCB0212C1F9AAF00B4A684 /* ImageLoader.swift */,
-				DEDCB01F2C1F9AAF00B4A684 /* RemoteImageLoader.swift */,
+				DED1A4B72C3067D600C1BC6F /* LoadingState.swift */,
+				DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */,
+				DED1A4B02C305EE500C1BC6F /* RemoteDataLoader.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -184,8 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				DEDCB0142C1F97E400B4A684 /* HomeView.swift */,
+				DE6867A92C28E07400193745 /* CardView.swift */,
 				DEDCB0322C1FA00E00B4A684 /* Views */,
 				DEDCB0332C1FA01900B4A684 /* ViewModels */,
+				DE2A64E42C2F9C6900FE27F3 /* Models */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -201,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */,
+				DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */,
+				DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -278,18 +301,23 @@
 				DEDCB0282C1F9AAF00B4A684 /* DataLoader.swift in Sources */,
 				DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */,
 				DEDCB02C2C1F9AF900B4A684 /* Odds.swift in Sources */,
-				DEDCB0242C1F9AAF00B4A684 /* RemoteImageLoader.swift in Sources */,
 				DEDCB0252C1F9AAF00B4A684 /* DataMapper.swift in Sources */,
+				DED1A4B32C30642300C1BC6F /* URL+Endpoints.swift in Sources */,
 				DEDCB0152C1F97E400B4A684 /* HomeView.swift in Sources */,
 				DEDCB0012C1F967100B4A684 /* sports_odds_clientApp.swift in Sources */,
+				DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */,
 				DEDCB01C2C1F99CB00B4A684 /* HTTPClient.swift in Sources */,
 				DEDCB01D2C1F99CB00B4A684 /* URLSessionHTTPClient.swift in Sources */,
 				DEDCB02F2C1F9CCD00B4A684 /* RemoteDataError.swift in Sources */,
-				DEDCB0272C1F9AAF00B4A684 /* DataError.swift in Sources */,
+				DE2A64E62C2F9C9600FE27F3 /* Config.swift in Sources */,
+				DED1A4BA2C3078DB00C1BC6F /* ViewModel.swift in Sources */,
+				DED1A4B62C30662500C1BC6F /* HomeViewModel+MockData.swift in Sources */,
+				DED1A4B82C3067D600C1BC6F /* LoadingState.swift in Sources */,
+				DEF3209D2C31BC9B0017BA11 /* HomeViewModel+Factory.swift in Sources */,
 				DEDCB02B2C1F9AF900B4A684 /* OddsResponse.swift in Sources */,
-				DEDCB0262C1F9AAF00B4A684 /* ImageLoader.swift in Sources */,
-				DEDCB0302C1F9CCD00B4A684 /* RemoteOddsFeedLoader.swift in Sources */,
 				DEDCB0352C1FA06200B4A684 /* HomeViewModel.swift in Sources */,
+				DE6867AA2C28E07400193745 /* CardView.swift in Sources */,
+				DED1A4B12C305EE500C1BC6F /* RemoteDataLoader.swift in Sources */,
 				DEDCB01E2C1F99CB00B4A684 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

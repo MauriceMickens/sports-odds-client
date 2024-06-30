@@ -8,69 +8,88 @@
 import Foundation
 
 @MainActor
-final class HomeViewModel: ObservableObject {
-    @Published var isLoading = false
-    @Published var hasMore = true
-    @Published var odds: [Odds] = []
+final class HomeViewModel: ObservableObject, ViewModelProtocol {
+    typealias ObjectType = Odds
+    typealias StateType = [Odds]
     
-    private let feedloader: RemoteOddsFeedLoader
-    private let imageLoader: ImageLoader
+    @Published var loadingState: LoadingState<[Odds]> = .loading
+    @Published var hasMore = true
+    @Published var selectedMarket: String = ""
+    
+    var objects: [Odds] = []
+    var activeSports: [String] = []
+    var activeMarkets: [Market] = []
     
     private let baseUrl: URL
+    private let remoteDataLoader: any DataLoader
     
-    private(set) var page = 1
-    private let sport = "basketball_nba"
+    private var page = 1
     private let limit = 50
     
-    init(
-        baseUrl: URL,
-        feedloader: RemoteOddsFeedLoader,
-        imageLoader: ImageLoader
-    ) {
-        self.feedloader = feedloader
+    init(baseUrl: URL, remoteDataLoader: any DataLoader) {
         self.baseUrl = baseUrl
-        self.imageLoader = imageLoader
+        self.remoteDataLoader = remoteDataLoader
     }
     
-    func loadOdds() async {
-        isLoading = true
+    func loadData() async throws {
+        do {
+            let config = try await loadConfig()
+            try await loadOdds(for: config)
+        } catch {
+            loadingState = .error(error: .network(error: error))
+        }
+    }
+    
+    private func loadConfig() async throws -> Config? {
+        guard let configUrl = URL.makeConfigURL(base: baseUrl.absoluteString) else {
+            loadingState = .error(error: .missingURL)
+            throw RemoteDataError.missingURL
+        }
         
-        guard let feedUrl = URL.makeOddsURL(
-            base: baseUrl.absoluteString,
-            sport: sport,
-            page: page,
-            limit: limit
-        ) else {
-            print("Failed to construct URL")
-            isLoading = false
+        let config: Config = try await remoteDataLoader.load(url: configUrl)
+        return config
+    }
+    
+    private func loadOdds(for config: Config?) async throws {
+        guard let config = config else {
+            loadingState = .error(error: .missingConfig)
             return
         }
         
-        do {
-            let newOdds = try await feedloader.load(url: feedUrl)
-            odds.append(contentsOf: newOdds)
-            page += 1
-            hasMore = !newOdds.isEmpty
-        } catch let error as RemoteDataError {
-            print("Failed to load odds: \(error.reason)")
-        } catch {
-            print("Unexpected error: \(error)")
+        let sortedSports = config.activeSports
+            .filter { $0.value.active }
+            .sorted { $0.value.index < $1.value.index }
+        
+        guard let firstSport = sortedSports.first else {
+            loadingState = .error(error: .missingConfig)
+            return
         }
         
-        isLoading = false
+        activeSports = sortedSports.map { $0.key }
+        activeMarkets = firstSport.value.markets
+        
+        guard let feedUrl = URL.makeOddsURL(base: baseUrl.absoluteString, sport: firstSport.key, page: page, limit: limit) else {
+            loadingState = .error(error: .missingURL)
+            return
+        }
+        
+        let newOdds: [Odds] = try await remoteDataLoader.load(url: feedUrl)
+        objects.append(contentsOf: newOdds)
+        
+        if let selectedMarket = firstSport.value.markets.first?.key {
+            self.selectedMarket = selectedMarket
+        }
+        
+        loadingState = .loaded(objects: objects)
+        page += 1
+        hasMore = !newOdds.isEmpty
     }
-}
-
-
-extension URL {
-    static func makeOddsURL(base: String, sport: String, page: Int, limit: Int) -> URL? {
-        var components = URLComponents(string: base)
-        components?.path = "/dev/api/v1/odds"
-        components?.queryItems = [
-            URLQueryItem(name: "sport", value: sport),
-            URLQueryItem(name: "page", value: String(page)),
-            URLQueryItem(name: "limit", value: String(limit))
-        ]
-        return components?.url
+    
+    func filterOdds(for market: String) {
+        loadingState = .loading
+        selectedMarket = market
+        loadingState = .loaded(
+            objects: objects.filter { $0.market == selectedMarket }
+        )
     }
 }

@@ -6,12 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DataLoader {
-    associatedtype SuccessModel
     associatedtype FailureModel: Error
     
-    func load(url: URL) async throws -> SuccessModel
+    func load<Model: Decodable>(url: URL) async throws -> Model
+    func load(url: URL) async throws -> UIImage
 }
-
-protocol FeedLoader: DataLoader {}

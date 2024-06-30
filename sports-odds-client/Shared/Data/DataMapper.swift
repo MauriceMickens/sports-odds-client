@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class DataMapper {
-    static func map<T: Decodable>(_ data: Data) -> Result<T, DataError> {
+    static func map<T: Decodable>(_ data: Data) -> Result<T, RemoteDataError> {
         do {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
@@ -20,9 +20,9 @@ final class DataMapper {
         }
     }
 
-    static func map(_ data: Data) -> Result<UIImage, DataError> {
+    static func map(_ data: Data) -> Result<UIImage, RemoteDataError> {
         guard let image = UIImage(data: data) else {
-            return .failure(.missingData)
+            return .failure(.missingImageData)
         }
         return .success(image)
     }

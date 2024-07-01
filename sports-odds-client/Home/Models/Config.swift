@@ -23,16 +23,18 @@ struct Config: Decodable {
 struct SportConfig: Decodable {
     let index: Int
     let active: Bool
+    let description: String
     let markets: [Market]
     
     enum CodingKeys: String, CodingKey {
-        case index, active, markets
+        case index, active, description, markets
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.index = try container.decode(Int.self, forKey: .index)
         self.active = try container.decode(Bool.self, forKey: .active)
+        self.description = try container.decode(String.self, forKey: .description)
         self.markets = try container.decodeIfPresent([Market].self, forKey: .markets) ?? []
     }
 }

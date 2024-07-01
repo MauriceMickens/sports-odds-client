@@ -103,7 +103,8 @@ struct PlayerImageUrls: Decodable, Hashable {
     }
 }
 
-struct Bookmaker: Decodable, Hashable {
+struct Bookmaker: Identifiable, Decodable, Hashable {
+    let id: UUID
     let bookmaker: String
     let betType: String
     let price: Int
@@ -122,6 +123,41 @@ struct Bookmaker: Decodable, Hashable {
         case amountWon = "amount_won"
         case expectedValue = "expected_value"
         case lastUpdate = "last_update"
+    }
+    
+    init(
+        id: UUID = UUID(),
+        bookmaker: String,
+        betType: String,
+        price: Int,
+        point: Double,
+        impliedProbability: Double,
+        amountWon: Double,
+        expectedValue: Double,
+        lastUpdate: String
+    ) {
+        self.id = id
+        self.bookmaker = bookmaker
+        self.betType = betType
+        self.price = price
+        self.point = point
+        self.impliedProbability = impliedProbability
+        self.amountWon = amountWon
+        self.expectedValue = expectedValue
+        self.lastUpdate = lastUpdate
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = UUID()
+        self.bookmaker = try container.decode(String.self, forKey: .bookmaker)
+        self.betType = try container.decode(String.self, forKey: .betType)
+        self.price = try container.decode(Int.self, forKey: .price)
+        self.point = try container.decode(Double.self, forKey: .point)
+        self.impliedProbability = try container.decode(Double.self, forKey: .impliedProbability)
+        self.amountWon = try container.decode(Double.self, forKey: .amountWon)
+        self.expectedValue = try container.decode(Double.self, forKey: .expectedValue)
+        self.lastUpdate = try container.decode(String.self, forKey: .lastUpdate)
     }
     
     static var random: Bookmaker {

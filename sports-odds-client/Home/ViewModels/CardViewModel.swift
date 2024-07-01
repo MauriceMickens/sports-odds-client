@@ -28,8 +28,16 @@ class CardViewModel: ObservableObject {
         odds.homeTeam
     }
     
+    var awayTeam: String {
+        odds.awayTeam
+    }
+    
     var gameDate: String {
         formatDate(odds.gameDate)
+    }
+    
+    var bookmakers: [Bookmaker] {
+        odds.bookmakers
     }
     
     private func loadImage() {
@@ -51,7 +59,7 @@ class CardViewModel: ObservableObject {
     
     private func formatDate(_ dateString: String) -> String {
         let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzZZZZ"
+        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzz"
         inputFormatter.locale = Locale(identifier: "en_US_POSIX")
         
         if let date = inputFormatter.date(from: dateString) {

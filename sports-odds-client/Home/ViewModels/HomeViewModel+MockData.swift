@@ -20,10 +20,7 @@ extension HomeViewModel {
                 homeTeam: "Seattle Storm",
                 gameDate: "2024-06-23 15:00:00 EDT-0400",
                 sport: "basketball_wnba",
-                playerImageUrls: PlayerImageUrls(
-                    originalURL: URL(string: "https://example.com/original.png")!,
-                    thumbnailURL: URL(string: "https://example.com/thumbnail.png")!
-                ),
+                playerImageUrls: nil,
                 bookmakers: [
                     Bookmaker(
                         bookmaker: "FanDuel",
@@ -54,6 +51,7 @@ extension HomeViewModel {
             remoteDataLoader: RemoteDataLoader(client: URLSessionHTTPClient())
         )
         viewModel.objects = mockOdds
+        viewModel.loadingState = .loaded(objects: mockOdds)
         return viewModel
     }
 }

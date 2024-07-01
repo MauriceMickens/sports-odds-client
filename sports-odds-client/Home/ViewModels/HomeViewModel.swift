@@ -14,6 +14,12 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
     
     @Published var loadingState: LoadingState<[Odds]> = .loading
     @Published var hasMore = true
+    
+    @Published var selectedSport: String = "" {
+        didSet {
+            filterSports()
+        }
+    }
     @Published var selectedMarket: String = "" {
         didSet {
             filterOdds()
@@ -21,7 +27,7 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
     }
     
     @Published var objects: [Odds] = []
-    @Published var activeSports: [String] = []
+    @Published var activeSports: [Sport] = []
     @Published var activeMarkets: [Market] = []
     @Published var filteredObjects: [Odds] = []
     
@@ -70,7 +76,13 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
             return
         }
         
-        activeSports = sortedSports.map { $0.key }
+        activeSports = sortedSports.map {
+            .init(
+                key: $0.key,
+                description: $0.value.description
+            )
+        }
+        
         activeMarkets = firstSport.value.markets
         
         guard let feedUrl = URL.makeOddsURL(base: baseUrl.absoluteString, sport: firstSport.key, page: page, limit: limit) else {
@@ -88,6 +100,10 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
         loadingState = .loaded(objects: objects)
         page += 1
         hasMore = !newOdds.isEmpty
+    }
+    
+    func filterSports() {
+        
     }
     
     func filterOdds() {

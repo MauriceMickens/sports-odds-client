@@ -10,25 +10,20 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     
-    var gridColumns: [GridItem] {
-        [
-            GridItem(.flexible(minimum: 150, maximum: 160)),
-            GridItem(.flexible(minimum: 150, maximum: 160))
-        ]
-    }
-    
     var body: some View {
         VStack {
-            SportsScrollRow(sports: viewModel.activeSports)
-                .padding(.horizontal)
-            
+            SportsScrollRow(
+                selectedSport: $viewModel.selectedSport,
+                activeSports: $viewModel.activeSports
+            )
+
             MarketsScrollRow(
                 selectedMarket: $viewModel.selectedMarket,
                 activeMarkets: $viewModel.activeMarkets
             )
             
             ScrollView {
-                LazyVGrid(columns: gridColumns, spacing: 15) {
+                VStack(spacing: 15) {
                     Group {
                         switch viewModel.loadingState {
                         case .loading:
@@ -36,6 +31,7 @@ struct HomeView: View {
                         case .loaded:
                             ForEach(viewModel.filteredObjects) { odds in
                                 CardView(viewModel: .init(odds: odds))
+                                    .padding(.horizontal)
                             }
                         case .error(let error):
                             Text(error.reason)
@@ -57,19 +53,29 @@ struct HomeView: View {
 }
 
 struct SportsScrollRow: View {
-    let sports: [String]
+    @Binding var selectedSport: String
+    @Binding var activeSports: [Sport]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(sports, id: \.self) { sport in
-                    Text(sport)
-                        .foregroundStyle(.white)
-                        .font(.subheadline)
-                        .frame(width: 60, height: 60)
-                        .background(.red)
+                ForEach(activeSports) { sport in
+                    Button {
+                        selectedSport = sport.key
+                    } label: {
+                        Text(sport.description)
+                            .foregroundStyle(.white)
+                            .font(.subheadline)
+                            .frame(width: 100, height: 40)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.blue)
+                                    .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
+                            )
+                    }
                 }
             }
+            .padding(.horizontal)
         }
     }
 }
@@ -88,11 +94,17 @@ struct MarketsScrollRow: View {
                         Text(market.description)
                             .foregroundStyle(.white)
                             .font(.subheadline)
-                            .frame(width: 80, height: 30)
-                            .background(.red)
+                            .padding(.horizontal)
+                            .padding(.vertical, 10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.blue)
+                                    .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
+                            )
                     }
                 }
             }
+            .padding(.horizontal)
         }
     }
 }

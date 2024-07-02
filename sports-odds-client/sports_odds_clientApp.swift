@@ -9,15 +9,12 @@ import SwiftUI
 
 @main
 struct sports_odds_clientApp: App {
+    @StateObject var appState = AppState()
+    
     var body: some Scene {
         WindowGroup {
-            let client = URLSessionHTTPClient()
-            let viewModel = HomeViewModel(
-                baseUrl: Environment.local.baseURL,
-                remoteDataLoader: RemoteDataLoader(client: client)
-            )
-            
-            HomeView(viewModel: viewModel)
+            MainTabView()
+                .environmentObject(appState)
         }
     }
 }

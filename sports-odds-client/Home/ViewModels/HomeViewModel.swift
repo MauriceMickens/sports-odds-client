@@ -5,6 +5,7 @@
 //  Created by Mickens on 6/16/24.
 //
 
+import Combine
 import Foundation
 
 @MainActor
@@ -83,7 +84,12 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
             )
         }
         
-        activeMarkets = firstSport.value.markets
+        activeMarkets = firstSport.value.markets.map {
+            .init(
+                key: $0.key,
+                description: $0.description
+            )
+        }
         
         guard let feedUrl = URL.makeOddsURL(base: baseUrl.absoluteString, sport: firstSport.key, page: page, limit: limit) else {
             loadingState = .error(error: .missingURL)
@@ -94,7 +100,7 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
         objects.append(contentsOf: newOdds)
         
         if let market = firstSport.value.markets.first {
-            self.selectedMarket = market.key
+            selectedMarket = market.key
         }
         
         loadingState = .loaded(objects: objects)
@@ -103,10 +109,11 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
     }
     
     func filterSports() {
-        
+
     }
     
     func filterOdds() {
         filteredObjects = objects.filter { $0.market == selectedMarket }
     }
 }
+

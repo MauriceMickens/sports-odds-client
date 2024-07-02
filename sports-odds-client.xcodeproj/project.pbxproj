@@ -31,6 +31,9 @@
 		DEF3209D2C31BC9B0017BA11 /* HomeViewModel+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */; };
 		DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209E2C31BD1F0017BA11 /* Sport.swift */; };
 		DEF320A12C3205450017BA11 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A02C3205450017BA11 /* CardViewModel.swift */; };
+		DEF320A32C324B370017BA11 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A22C324B370017BA11 /* MainTabView.swift */; };
+		DEF320A52C324F9E0017BA11 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A42C324F9E0017BA11 /* ViewModelFactory.swift */; };
+		DEF320A72C32507D0017BA11 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A62C32507D0017BA11 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+Factory.swift"; sourceTree = "<group>"; };
 		DEF3209E2C31BD1F0017BA11 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		DEF320A02C3205450017BA11 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		DEF320A22C324B370017BA11 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		DEF320A42C324F9E0017BA11 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		DEF320A62C32507D0017BA11 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */,
+				DEF320A22C324B370017BA11 /* MainTabView.swift */,
+				DEF320A62C32507D0017BA11 /* AppState.swift */,
+				DEF320A42C324F9E0017BA11 /* ViewModelFactory.swift */,
 				DEDCB0312C1F9FEC00B4A684 /* Home */,
 				DEDCB00E2C1F973200B4A684 /* OddsFeed */,
 				DEDCB0132C1F97B600B4A684 /* Shared */,
@@ -204,7 +213,6 @@
 		DEDCB0312C1F9FEC00B4A684 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DEDCB0142C1F97E400B4A684 /* HomeView.swift */,
 				DEDCB0322C1FA00E00B4A684 /* Views */,
 				DEDCB0332C1FA01900B4A684 /* ViewModels */,
 				DE2A64E42C2F9C6900FE27F3 /* Models */,
@@ -215,6 +223,7 @@
 		DEDCB0322C1FA00E00B4A684 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DEDCB0142C1F97E400B4A684 /* HomeView.swift */,
 				DE6867A92C28E07400193745 /* CardView.swift */,
 			);
 			path = Views;
@@ -310,17 +319,20 @@
 				DEDCB0152C1F97E400B4A684 /* HomeView.swift in Sources */,
 				DEDCB0012C1F967100B4A684 /* sports_odds_clientApp.swift in Sources */,
 				DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */,
+				DEF320A32C324B370017BA11 /* MainTabView.swift in Sources */,
 				DEDCB01C2C1F99CB00B4A684 /* HTTPClient.swift in Sources */,
 				DEDCB01D2C1F99CB00B4A684 /* URLSessionHTTPClient.swift in Sources */,
 				DEDCB02F2C1F9CCD00B4A684 /* RemoteDataError.swift in Sources */,
 				DE2A64E62C2F9C9600FE27F3 /* Config.swift in Sources */,
 				DED1A4BA2C3078DB00C1BC6F /* ViewModel.swift in Sources */,
 				DED1A4B62C30662500C1BC6F /* HomeViewModel+MockData.swift in Sources */,
+				DEF320A72C32507D0017BA11 /* AppState.swift in Sources */,
 				DED1A4B82C3067D600C1BC6F /* LoadingState.swift in Sources */,
 				DEF3209D2C31BC9B0017BA11 /* HomeViewModel+Factory.swift in Sources */,
 				DEDCB02B2C1F9AF900B4A684 /* OddsResponse.swift in Sources */,
 				DEDCB0352C1FA06200B4A684 /* HomeViewModel.swift in Sources */,
 				DE6867AA2C28E07400193745 /* CardView.swift in Sources */,
+				DEF320A52C324F9E0017BA11 /* ViewModelFactory.swift in Sources */,
 				DED1A4B12C305EE500C1BC6F /* RemoteDataLoader.swift in Sources */,
 				DEDCB01E2C1F99CB00B4A684 /* NetworkError.swift in Sources */,
 			);

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		DE2A64E62C2F9C9600FE27F3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A64E52C2F9C9600FE27F3 /* Config.swift */; };
 		DE6867AA2C28E07400193745 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6867A92C28E07400193745 /* CardView.swift */; };
+		DE9A7ED72C338618008446A9 /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9A7ED62C338618008446A9 /* SelectableItem.swift */; };
+		DE9A7EDB2C33867F008446A9 /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9A7EDA2C33867F008446A9 /* HorizontalScrollView.swift */; };
+		DE9A7EDD2C338F9A008446A9 /* BookmakerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9A7EDC2C338F9A008446A9 /* BookmakerCardView.swift */; };
+		DE9A7EDF2C3396D9008446A9 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9A7EDE2C3396D9008446A9 /* Market.swift */; };
 		DED1A4B12C305EE500C1BC6F /* RemoteDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B02C305EE500C1BC6F /* RemoteDataLoader.swift */; };
 		DED1A4B32C30642300C1BC6F /* URL+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B22C30642300C1BC6F /* URL+Endpoints.swift */; };
 		DED1A4B62C30662500C1BC6F /* HomeViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */; };
@@ -28,7 +32,6 @@
 		DEDCB02F2C1F9CCD00B4A684 /* RemoteDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */; };
 		DEDCB0352C1FA06200B4A684 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */; };
 		DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0362C1FABFE00B4A684 /* Environment.swift */; };
-		DEF3209D2C31BC9B0017BA11 /* HomeViewModel+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */; };
 		DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209E2C31BD1F0017BA11 /* Sport.swift */; };
 		DEF320A12C3205450017BA11 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A02C3205450017BA11 /* CardViewModel.swift */; };
 		DEF320A32C324B370017BA11 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A22C324B370017BA11 /* MainTabView.swift */; };
@@ -39,6 +42,10 @@
 /* Begin PBXFileReference section */
 		DE2A64E52C2F9C9600FE27F3 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		DE6867A92C28E07400193745 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DE9A7ED62C338618008446A9 /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
+		DE9A7EDA2C33867F008446A9 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
+		DE9A7EDC2C338F9A008446A9 /* BookmakerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmakerCardView.swift; sourceTree = "<group>"; };
+		DE9A7EDE2C3396D9008446A9 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		DED1A4B02C305EE500C1BC6F /* RemoteDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataLoader.swift; sourceTree = "<group>"; };
 		DED1A4B22C30642300C1BC6F /* URL+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Endpoints.swift"; sourceTree = "<group>"; };
 		DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+MockData.swift"; sourceTree = "<group>"; };
@@ -59,7 +66,6 @@
 		DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataError.swift; sourceTree = "<group>"; };
 		DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DEDCB0362C1FABFE00B4A684 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+Factory.swift"; sourceTree = "<group>"; };
 		DEF3209E2C31BD1F0017BA11 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		DEF320A02C3205450017BA11 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		DEF320A22C324B370017BA11 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 			children = (
 				DE2A64E52C2F9C9600FE27F3 /* Config.swift */,
 				DEF3209E2C31BD1F0017BA11 /* Sport.swift */,
+				DE9A7EDE2C3396D9008446A9 /* Market.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				DED1A4B92C3078DB00C1BC6F /* ViewModel.swift */,
+				DE9A7ED62C338618008446A9 /* SelectableItem.swift */,
+				DE9A7EDA2C33867F008446A9 /* HorizontalScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,31 +222,31 @@
 		DEDCB0312C1F9FEC00B4A684 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DEDCB0322C1FA00E00B4A684 /* Views */,
-				DEDCB0332C1FA01900B4A684 /* ViewModels */,
+				DEDCB0322C1FA00E00B4A684 /* HomeView */,
+				DEDCB0332C1FA01900B4A684 /* CardView */,
 				DE2A64E42C2F9C6900FE27F3 /* Models */,
+				DE9A7EDC2C338F9A008446A9 /* BookmakerCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		DEDCB0322C1FA00E00B4A684 /* Views */ = {
+		DEDCB0322C1FA00E00B4A684 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
 				DEDCB0142C1F97E400B4A684 /* HomeView.swift */,
-				DE6867A92C28E07400193745 /* CardView.swift */,
+				DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */,
+				DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */,
 			);
-			path = Views;
+			path = HomeView;
 			sourceTree = "<group>";
 		};
-		DEDCB0332C1FA01900B4A684 /* ViewModels */ = {
+		DEDCB0332C1FA01900B4A684 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
-				DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */,
-				DEF3209C2C31BC9B0017BA11 /* HomeViewModel+Factory.swift */,
-				DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */,
+				DE6867A92C28E07400193745 /* CardView.swift */,
 				DEF320A02C3205450017BA11 /* CardViewModel.swift */,
 			);
-			path = ViewModels;
+			path = CardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,12 +321,14 @@
 			files = (
 				DEF320A12C3205450017BA11 /* CardViewModel.swift in Sources */,
 				DEDCB0282C1F9AAF00B4A684 /* DataLoader.swift in Sources */,
+				DE9A7EDD2C338F9A008446A9 /* BookmakerCardView.swift in Sources */,
 				DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */,
 				DEDCB02C2C1F9AF900B4A684 /* Odds.swift in Sources */,
 				DEDCB0252C1F9AAF00B4A684 /* DataMapper.swift in Sources */,
 				DED1A4B32C30642300C1BC6F /* URL+Endpoints.swift in Sources */,
 				DEDCB0152C1F97E400B4A684 /* HomeView.swift in Sources */,
 				DEDCB0012C1F967100B4A684 /* sports_odds_clientApp.swift in Sources */,
+				DE9A7ED72C338618008446A9 /* SelectableItem.swift in Sources */,
 				DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */,
 				DEF320A32C324B370017BA11 /* MainTabView.swift in Sources */,
 				DEDCB01C2C1F99CB00B4A684 /* HTTPClient.swift in Sources */,
@@ -328,12 +339,13 @@
 				DED1A4B62C30662500C1BC6F /* HomeViewModel+MockData.swift in Sources */,
 				DEF320A72C32507D0017BA11 /* AppState.swift in Sources */,
 				DED1A4B82C3067D600C1BC6F /* LoadingState.swift in Sources */,
-				DEF3209D2C31BC9B0017BA11 /* HomeViewModel+Factory.swift in Sources */,
 				DEDCB02B2C1F9AF900B4A684 /* OddsResponse.swift in Sources */,
 				DEDCB0352C1FA06200B4A684 /* HomeViewModel.swift in Sources */,
 				DE6867AA2C28E07400193745 /* CardView.swift in Sources */,
+				DE9A7EDF2C3396D9008446A9 /* Market.swift in Sources */,
 				DEF320A52C324F9E0017BA11 /* ViewModelFactory.swift in Sources */,
 				DED1A4B12C305EE500C1BC6F /* RemoteDataLoader.swift in Sources */,
+				DE9A7EDB2C33867F008446A9 /* HorizontalScrollView.swift in Sources */,
 				DEDCB01E2C1F99CB00B4A684 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

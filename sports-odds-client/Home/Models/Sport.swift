@@ -29,3 +29,5 @@ struct Sport: Identifiable, Decodable, Hashable {
         self.description = try container.decode(String.self, forKey: .key)
     }
 }
+
+extension Sport: SelectableItem {}

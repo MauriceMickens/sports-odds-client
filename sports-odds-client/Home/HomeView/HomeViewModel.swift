@@ -16,12 +16,12 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
     @Published var loadingState: LoadingState<[Odds]> = .loading
     @Published var hasMore = true
     
-    @Published var selectedSport: String = "" {
+    @Published var selectedSport: Sport = .init(key: "", description: "") {
         didSet {
             filterSports()
         }
     }
-    @Published var selectedMarket: String = "" {
+    @Published var selectedMarket: Market = .init(key: "", description: "") {
         didSet {
             filterOdds()
         }
@@ -100,7 +100,7 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
         objects.append(contentsOf: newOdds)
         
         if let market = firstSport.value.markets.first {
-            selectedMarket = market.key
+            selectedMarket = market
         }
         
         loadingState = .loaded(objects: objects)
@@ -113,7 +113,7 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
     }
     
     func filterOdds() {
-        filteredObjects = objects.filter { $0.market == selectedMarket }
+        filteredObjects = objects.filter { $0.market == selectedMarket.key }
     }
 }
 

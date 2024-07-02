@@ -14,6 +14,8 @@ struct MainTabView: View {
     @State private var selectedTab = 1
     
     var body: some View {
+        HeaderView(title: "Betlytics")
+        
         TabView(selection: $selectedTab) {
             Text("Tab 1")
                 .tabItem {
@@ -36,6 +38,20 @@ struct MainTabView: View {
                 }
                 .tag(2)
         }
+    }
+}
+
+struct HeaderView: View {
+    let title: String
+    
+    var body: some View {
+        Text(title)
+            .font(.largeTitle)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
     }
 }
 

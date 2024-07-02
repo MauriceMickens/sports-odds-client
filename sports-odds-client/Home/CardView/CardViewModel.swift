@@ -33,7 +33,7 @@ class CardViewModel: ObservableObject {
     }
     
     var gameDate: String {
-        formatDate(odds.gameDate)
+        odds.gameDate.formatDate()
     }
     
     var bookmakers: [Bookmaker] {
@@ -57,9 +57,9 @@ class CardViewModel: ObservableObject {
             }
     }
     
-    private func formatDate(_ dateString: String) -> String {
+    static func formatDate(_ dateString: String) -> String {
         let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzz"
+        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzZZZZ"
         inputFormatter.locale = Locale(identifier: "en_US_POSIX")
         
         if let date = inputFormatter.date(from: dateString) {
@@ -74,5 +74,23 @@ class CardViewModel: ObservableObject {
     
     deinit {
         cancellable?.cancel()
+    }
+}
+
+extension String {
+    
+    func formatDate() -> String {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzZZZZ"
+        inputFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        if let date = inputFormatter.date(from: self) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateStyle = .medium
+            outputFormatter.timeStyle = .short
+            return outputFormatter.string(from: date)
+        } else {
+            return self
+        }
     }
 }

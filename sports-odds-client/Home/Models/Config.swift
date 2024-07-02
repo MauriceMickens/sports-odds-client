@@ -38,9 +38,3 @@ struct SportConfig: Decodable {
         self.markets = try container.decodeIfPresent([Market].self, forKey: .markets) ?? []
     }
 }
-
-struct Market: Identifiable, Decodable, Hashable {
-    let id = UUID()
-    let key: String
-    let description: String
-}

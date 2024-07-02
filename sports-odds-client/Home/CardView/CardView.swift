@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     @StateObject var viewModel: CardViewModel
+    let selectedMarket: Market
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -48,37 +49,11 @@ struct CardView: View {
             
             VStack(alignment: .leading, spacing: 10) {
                 ForEach(viewModel.bookmakers) { bookmaker in
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text("Bookmaker: \(bookmaker.bookmaker)")
-                            .font(.headline)
-                        HStack {
-                            Text("Bet Type: \(bookmaker.betType)")
-                                .font(.subheadline)
-                            Spacer()
-                            Text("Price: \(bookmaker.price)")
-                                .font(.subheadline)
-                        }
-                        HStack {
-                            Text("Point: \(bookmaker.point, specifier: "%.2f")")
-                                .font(.subheadline)
-                            Spacer()
-                            Text("Implied Probability: \(bookmaker.impliedProbability, specifier: "%.2f")")
-                                .font(.subheadline)
-                        }
-                        HStack {
-                            Text("Amount Won: \(bookmaker.amountWon, specifier: "%.2f")")
-                                .font(.subheadline)
-                            Spacer()
-                            Text("Expected Value: \(bookmaker.expectedValue, specifier: "%.2f")")
-                                .font(.subheadline)
-                        }
-                        Text("Last Update: \(bookmaker.lastUpdate)")
-                            .font(.footnote)
-                            .foregroundColor(.gray)
-                    }
-                    .padding()
-                    .background(Color(UIColor.secondarySystemBackground))
-                    .cornerRadius(10)
+                    BookmakerCardView(
+                        bookmaker: bookmaker,
+                        selectedMarket: selectedMarket
+                    )
+                    .padding(.vertical, 5)
                 }
             }
             
@@ -92,9 +67,10 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(viewModel: CardViewModel(odds: Odds.random))
+    CardView(
+        viewModel: CardViewModel(odds: Odds.random),
+        selectedMarket: .init(key: "points", description: "Points")
+    )
         .padding()
         .background(Color.black)
 }
-
-

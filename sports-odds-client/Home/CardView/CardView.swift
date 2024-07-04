@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct CardView: View {
-    @StateObject var viewModel: CardViewModel
-    let selectedMarket: Market
+    @StateObject private var viewModel: CardViewModel
+    private let selectedMarket: Market
+    
+    init(selectedMarket: Market, odds: Odds) {
+        _viewModel = StateObject(wrappedValue: CardViewModel(odds: odds))
+        self.selectedMarket = selectedMarket
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -68,8 +73,8 @@ struct CardView: View {
 
 #Preview {
     CardView(
-        viewModel: CardViewModel(odds: Odds.random),
-        selectedMarket: .init(key: "points", description: "Points")
+        selectedMarket: .init(key: "points", description: "Points"), 
+        odds: Odds.random
     )
         .padding()
         .background(Color.black)

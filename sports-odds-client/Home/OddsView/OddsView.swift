@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    @ObservedObject var viewModel: HomeViewModel
+struct OddsView: View {
+    @ObservedObject var viewModel: OddsViewModel
+    @State private var selectedOdds: Odds?
     
     var body: some View {
         VStack {
@@ -31,9 +32,12 @@ struct HomeView: View {
                         case .loaded:
                             ForEach(viewModel.filteredObjects) { odds in
                                 CardView(
-                                    viewModel: .init(odds: odds),
-                                    selectedMarket: viewModel.selectedMarket
+                                    selectedMarket: viewModel.selectedMarket,
+                                    odds: odds
                                 )
+                                .onTapGesture {
+                                    selectedOdds = odds
+                                }
                                 .padding(.horizontal)
                             }
                         case .error(let error):
@@ -42,19 +46,31 @@ struct HomeView: View {
                     }
                 }
             }
+            .refreshable {
+                do {
+                    try await viewModel.refreshData()
+                } catch {
+                    print(error)
+                }
+            }
         }
-        .task {
-            do {
-                try await viewModel.loadData()
-            } catch {
-                print(error)
+        .onAppear {
+            Task {
+                do {
+                    try await viewModel.loadData()
+                } catch {
+                    print(error)
+                }
             }
         }
         .padding()
         .navigationBarTitle("Betlytics")
+        .sheet(item: $selectedOdds) { odds in
+            CardDetailView(odds: odds)
+        }
     }
 }
 
 #Preview {
-    return HomeView(viewModel: .mock(count: 6))
+    return OddsView(viewModel: .mock(count: 6))
 }

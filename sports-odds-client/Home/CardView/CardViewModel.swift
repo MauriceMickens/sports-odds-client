@@ -13,7 +13,7 @@ class CardViewModel: ObservableObject {
     @Published var isLoading: Bool = true
     
     private var cancellable: AnyCancellable?
-    private let odds: Odds
+    let odds: Odds
     
     init(odds: Odds) {
         self.odds = odds

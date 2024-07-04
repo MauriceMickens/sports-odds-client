@@ -9,12 +9,13 @@ import Combine
 import Foundation
 
 @MainActor
-final class HomeViewModel: ObservableObject, ViewModelProtocol {
+final class OddsViewModel: ObservableObject, ViewModelProtocol {
     typealias ObjectType = Odds
     typealias StateType = [Odds]
     
     @Published var loadingState: LoadingState<[Odds]> = .loading
     @Published var hasMore = true
+    @Published var dataLoaded = false
     
     @Published var selectedSport: Sport = .init(key: "", description: "") {
         didSet {
@@ -37,6 +38,7 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
     
     private var page = 1
     private let limit = 50
+    private var loadTask: Task<Void, Never>?
     
     init(baseUrl: URL, remoteDataLoader: any DataLoader) {
         self.baseUrl = baseUrl
@@ -44,12 +46,26 @@ final class HomeViewModel: ObservableObject, ViewModelProtocol {
     }
     
     func loadData() async throws {
-        do {
-            let config = try await loadConfig()
-            try await loadOdds(for: config)
-        } catch {
-            loadingState = .error(error: .network(error: error))
+        guard !dataLoaded else { return }
+        
+        loadTask?.cancel() // Cancel any ongoing task
+        loadTask = Task {
+            do {
+                let config = try await loadConfig()
+                try await loadOdds(for: config)
+                dataLoaded = true
+            } catch {
+                loadingState = .error(error: .network(error: error))
+            }
         }
+        await loadTask?.value
+    }
+    
+    func refreshData() async throws {
+        page = 1
+        objects.removeAll()
+        dataLoaded = false
+        try await loadData()
     }
     
     private func loadConfig() async throws -> Config? {

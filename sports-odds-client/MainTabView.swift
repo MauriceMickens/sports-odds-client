@@ -11,23 +11,23 @@ import SwiftUI
 struct MainTabView: View {
     @EnvironmentObject var appState: AppState
     @State var viewModelFactory = ViewModelFactory()
-    @State private var selectedTab = 1
+    @State private var selectedTab = 0
     
     var body: some View {
         HeaderView(title: "Betlytics")
         
         TabView(selection: $selectedTab) {
-            Text("Tab 1")
-                .tabItem {
-                    Image(systemName: "message.circle")
-                    Text("Home")
-                }
-                .tag(0)
-            
-            HomeView(viewModel: viewModelFactory.makeHomeViewModel())
+            OddsView(viewModel: viewModelFactory.makeOddsViewModel())
                 .tabItem {
                     Image(systemName: "house")
                     Text("Betlytics")
+                }
+                .tag(0)
+            
+            Text("Tab 1")
+                .tabItem {
+                    Image(systemName: "message.circle")
+                    Text("AI Picks")
                 }
                 .tag(1)
             

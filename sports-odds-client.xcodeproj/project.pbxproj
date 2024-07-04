@@ -13,15 +13,20 @@
 		DE9A7EDB2C33867F008446A9 /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9A7EDA2C33867F008446A9 /* HorizontalScrollView.swift */; };
 		DE9A7EDD2C338F9A008446A9 /* BookmakerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9A7EDC2C338F9A008446A9 /* BookmakerCardView.swift */; };
 		DE9A7EDF2C3396D9008446A9 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9A7EDE2C3396D9008446A9 /* Market.swift */; };
+		DEBBF8DF2C36355D00AD1E53 /* Bookmaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBF8DE2C36355D00AD1E53 /* Bookmaker.swift */; };
+		DEBBF8E12C36358000AD1E53 /* PlayerImageUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBF8E02C36358000AD1E53 /* PlayerImageUrls.swift */; };
+		DEBBF8E32C3635B700AD1E53 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBF8E22C3635B700AD1E53 /* Team.swift */; };
+		DEBBF8E72C3642E600AD1E53 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBF8E62C3642E600AD1E53 /* CardDetailView.swift */; };
+		DEBBF8E92C36582600AD1E53 /* CardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBF8E82C36582600AD1E53 /* CardDetailViewModel.swift */; };
 		DED1A4B12C305EE500C1BC6F /* RemoteDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B02C305EE500C1BC6F /* RemoteDataLoader.swift */; };
 		DED1A4B32C30642300C1BC6F /* URL+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B22C30642300C1BC6F /* URL+Endpoints.swift */; };
-		DED1A4B62C30662500C1BC6F /* HomeViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */; };
+		DED1A4B62C30662500C1BC6F /* OddsViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B52C30662500C1BC6F /* OddsViewModel+MockData.swift */; };
 		DED1A4B82C3067D600C1BC6F /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B72C3067D600C1BC6F /* LoadingState.swift */; };
 		DED1A4BA2C3078DB00C1BC6F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED1A4B92C3078DB00C1BC6F /* ViewModel.swift */; };
 		DEDCB0012C1F967100B4A684 /* sports_odds_clientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */; };
 		DEDCB0052C1F967400B4A684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDCB0042C1F967400B4A684 /* Assets.xcassets */; };
 		DEDCB0082C1F967400B4A684 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDCB0072C1F967400B4A684 /* Preview Assets.xcassets */; };
-		DEDCB0152C1F97E400B4A684 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0142C1F97E400B4A684 /* HomeView.swift */; };
+		DEDCB0152C1F97E400B4A684 /* OddsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0142C1F97E400B4A684 /* OddsView.swift */; };
 		DEDCB01C2C1F99CB00B4A684 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0192C1F99CB00B4A684 /* HTTPClient.swift */; };
 		DEDCB01D2C1F99CB00B4A684 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB01A2C1F99CB00B4A684 /* URLSessionHTTPClient.swift */; };
 		DEDCB01E2C1F99CB00B4A684 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB01B2C1F99CB00B4A684 /* NetworkError.swift */; };
@@ -30,7 +35,7 @@
 		DEDCB02B2C1F9AF900B4A684 /* OddsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0292C1F9AF900B4A684 /* OddsResponse.swift */; };
 		DEDCB02C2C1F9AF900B4A684 /* Odds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB02A2C1F9AF900B4A684 /* Odds.swift */; };
 		DEDCB02F2C1F9CCD00B4A684 /* RemoteDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */; };
-		DEDCB0352C1FA06200B4A684 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */; };
+		DEDCB0352C1FA06200B4A684 /* OddsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0342C1FA06200B4A684 /* OddsViewModel.swift */; };
 		DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCB0362C1FABFE00B4A684 /* Environment.swift */; };
 		DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209E2C31BD1F0017BA11 /* Sport.swift */; };
 		DEF320A12C3205450017BA11 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A02C3205450017BA11 /* CardViewModel.swift */; };
@@ -46,16 +51,21 @@
 		DE9A7EDA2C33867F008446A9 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
 		DE9A7EDC2C338F9A008446A9 /* BookmakerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmakerCardView.swift; sourceTree = "<group>"; };
 		DE9A7EDE2C3396D9008446A9 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		DEBBF8DE2C36355D00AD1E53 /* Bookmaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmaker.swift; sourceTree = "<group>"; };
+		DEBBF8E02C36358000AD1E53 /* PlayerImageUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImageUrls.swift; sourceTree = "<group>"; };
+		DEBBF8E22C3635B700AD1E53 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		DEBBF8E62C3642E600AD1E53 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		DEBBF8E82C36582600AD1E53 /* CardDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewModel.swift; sourceTree = "<group>"; };
 		DED1A4B02C305EE500C1BC6F /* RemoteDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataLoader.swift; sourceTree = "<group>"; };
 		DED1A4B22C30642300C1BC6F /* URL+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Endpoints.swift"; sourceTree = "<group>"; };
-		DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+MockData.swift"; sourceTree = "<group>"; };
+		DED1A4B52C30662500C1BC6F /* OddsViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OddsViewModel+MockData.swift"; sourceTree = "<group>"; };
 		DED1A4B72C3067D600C1BC6F /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		DED1A4B92C3078DB00C1BC6F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DEDCAFFD2C1F967100B4A684 /* sports-odds-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sports-odds-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sports_odds_clientApp.swift; sourceTree = "<group>"; };
 		DEDCB0042C1F967400B4A684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEDCB0072C1F967400B4A684 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DEDCB0142C1F97E400B4A684 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DEDCB0142C1F97E400B4A684 /* OddsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsView.swift; sourceTree = "<group>"; };
 		DEDCB0192C1F99CB00B4A684 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		DEDCB01A2C1F99CB00B4A684 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		DEDCB01B2C1F99CB00B4A684 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -64,7 +74,7 @@
 		DEDCB0292C1F9AF900B4A684 /* OddsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsResponse.swift; sourceTree = "<group>"; };
 		DEDCB02A2C1F9AF900B4A684 /* Odds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Odds.swift; sourceTree = "<group>"; };
 		DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataError.swift; sourceTree = "<group>"; };
-		DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DEDCB0342C1FA06200B4A684 /* OddsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsViewModel.swift; sourceTree = "<group>"; };
 		DEDCB0362C1FABFE00B4A684 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		DEF3209E2C31BD1F0017BA11 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		DEF320A02C3205450017BA11 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
@@ -128,7 +138,6 @@
 				DEF320A62C32507D0017BA11 /* AppState.swift */,
 				DEF320A42C324F9E0017BA11 /* ViewModelFactory.swift */,
 				DEDCB0312C1F9FEC00B4A684 /* Home */,
-				DEDCB00E2C1F973200B4A684 /* OddsFeed */,
 				DEDCB0132C1F97B600B4A684 /* Shared */,
 				DEDCB0162C1F988600B4A684 /* Extensions */,
 				DEDCB0042C1F967400B4A684 /* Assets.xcassets */,
@@ -145,37 +154,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DEDCB00E2C1F973200B4A684 /* OddsFeed */ = {
-			isa = PBXGroup;
-			children = (
-				DEDCB0122C1F978C00B4A684 /* Views */,
-				DEDCB0112C1F978200B4A684 /* ViewModels */,
-				DEDCB0102C1F977600B4A684 /* Models */,
-			);
-			path = OddsFeed;
-			sourceTree = "<group>";
-		};
 		DEDCB0102C1F977600B4A684 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DEBBF8DE2C36355D00AD1E53 /* Bookmaker.swift */,
 				DEDCB02A2C1F9AF900B4A684 /* Odds.swift */,
 				DEDCB0292C1F9AF900B4A684 /* OddsResponse.swift */,
+				DEBBF8E02C36358000AD1E53 /* PlayerImageUrls.swift */,
+				DEBBF8E22C3635B700AD1E53 /* Team.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		DEDCB0112C1F978200B4A684 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		DEDCB0122C1F978C00B4A684 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		DEDCB0132C1F97B600B4A684 /* Shared */ = {
@@ -222,7 +210,7 @@
 		DEDCB0312C1F9FEC00B4A684 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DEDCB0322C1FA00E00B4A684 /* HomeView */,
+				DEDCB0322C1FA00E00B4A684 /* OddsView */,
 				DEDCB0332C1FA01900B4A684 /* CardView */,
 				DE2A64E42C2F9C6900FE27F3 /* Models */,
 				DE9A7EDC2C338F9A008446A9 /* BookmakerCardView.swift */,
@@ -230,14 +218,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		DEDCB0322C1FA00E00B4A684 /* HomeView */ = {
+		DEDCB0322C1FA00E00B4A684 /* OddsView */ = {
 			isa = PBXGroup;
 			children = (
-				DEDCB0142C1F97E400B4A684 /* HomeView.swift */,
-				DEDCB0342C1FA06200B4A684 /* HomeViewModel.swift */,
-				DED1A4B52C30662500C1BC6F /* HomeViewModel+MockData.swift */,
+				DEDCB0142C1F97E400B4A684 /* OddsView.swift */,
+				DEDCB0342C1FA06200B4A684 /* OddsViewModel.swift */,
+				DED1A4B52C30662500C1BC6F /* OddsViewModel+MockData.swift */,
+				DEDCB0102C1F977600B4A684 /* Models */,
 			);
-			path = HomeView;
+			path = OddsView;
 			sourceTree = "<group>";
 		};
 		DEDCB0332C1FA01900B4A684 /* CardView */ = {
@@ -245,6 +234,8 @@
 			children = (
 				DE6867A92C28E07400193745 /* CardView.swift */,
 				DEF320A02C3205450017BA11 /* CardViewModel.swift */,
+				DEBBF8E62C3642E600AD1E53 /* CardDetailView.swift */,
+				DEBBF8E82C36582600AD1E53 /* CardDetailViewModel.swift */,
 			);
 			path = CardView;
 			sourceTree = "<group>";
@@ -324,9 +315,11 @@
 				DE9A7EDD2C338F9A008446A9 /* BookmakerCardView.swift in Sources */,
 				DEDCB0372C1FABFE00B4A684 /* Environment.swift in Sources */,
 				DEDCB02C2C1F9AF900B4A684 /* Odds.swift in Sources */,
+				DEBBF8DF2C36355D00AD1E53 /* Bookmaker.swift in Sources */,
+				DEBBF8E32C3635B700AD1E53 /* Team.swift in Sources */,
 				DEDCB0252C1F9AAF00B4A684 /* DataMapper.swift in Sources */,
 				DED1A4B32C30642300C1BC6F /* URL+Endpoints.swift in Sources */,
-				DEDCB0152C1F97E400B4A684 /* HomeView.swift in Sources */,
+				DEDCB0152C1F97E400B4A684 /* OddsView.swift in Sources */,
 				DEDCB0012C1F967100B4A684 /* sports_odds_clientApp.swift in Sources */,
 				DE9A7ED72C338618008446A9 /* SelectableItem.swift in Sources */,
 				DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */,
@@ -334,13 +327,16 @@
 				DEDCB01C2C1F99CB00B4A684 /* HTTPClient.swift in Sources */,
 				DEDCB01D2C1F99CB00B4A684 /* URLSessionHTTPClient.swift in Sources */,
 				DEDCB02F2C1F9CCD00B4A684 /* RemoteDataError.swift in Sources */,
+				DEBBF8E72C3642E600AD1E53 /* CardDetailView.swift in Sources */,
 				DE2A64E62C2F9C9600FE27F3 /* Config.swift in Sources */,
 				DED1A4BA2C3078DB00C1BC6F /* ViewModel.swift in Sources */,
-				DED1A4B62C30662500C1BC6F /* HomeViewModel+MockData.swift in Sources */,
+				DED1A4B62C30662500C1BC6F /* OddsViewModel+MockData.swift in Sources */,
 				DEF320A72C32507D0017BA11 /* AppState.swift in Sources */,
+				DEBBF8E12C36358000AD1E53 /* PlayerImageUrls.swift in Sources */,
+				DEBBF8E92C36582600AD1E53 /* CardDetailViewModel.swift in Sources */,
 				DED1A4B82C3067D600C1BC6F /* LoadingState.swift in Sources */,
 				DEDCB02B2C1F9AF900B4A684 /* OddsResponse.swift in Sources */,
-				DEDCB0352C1FA06200B4A684 /* HomeViewModel.swift in Sources */,
+				DEDCB0352C1FA06200B4A684 /* OddsViewModel.swift in Sources */,
 				DE6867AA2C28E07400193745 /* CardView.swift in Sources */,
 				DE9A7EDF2C3396D9008446A9 /* Market.swift in Sources */,
 				DEF320A52C324F9E0017BA11 /* ViewModelFactory.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  HomeViewModel+MockData.swift
+//  OddsViewModel+MockData.swift
 //  sports-odds-client
 //
 //  Created by Mickens on 6/29/24.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension HomeViewModel {
-    static func mock(count: Int = 1) -> HomeViewModel {
+extension OddsViewModel {
+    static func mock(count: Int = 1) -> OddsViewModel {
         var mockOdds: [Odds] = []
         for _ in 0..<count {
             mockOdds.append(.init(
@@ -42,11 +42,17 @@ extension HomeViewModel {
                         expectedValue: 0.00008,
                         lastUpdate: "2024-06-23 13:45:48 EDT-0400"
                     )
-                ]
+                ], team: Team(
+                    id: 012345,
+                    name: "name",
+                    abbreviation: "abbreviation",
+                    city: "city",
+                    playerPosition: "position"
+                )
             ))
         }
         
-        let viewModel = HomeViewModel(
+        let viewModel = OddsViewModel(
             baseUrl: URL(string: "https://example.com/odds")!,
             remoteDataLoader: RemoteDataLoader(client: URLSessionHTTPClient())
         )

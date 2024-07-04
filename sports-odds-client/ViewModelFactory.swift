@@ -17,8 +17,8 @@ final class ViewModelFactory {
     }
     
     @MainActor
-    func makeHomeViewModel() -> HomeViewModel {
-        return HomeViewModel(
+    func makeOddsViewModel() -> OddsViewModel {
+        return OddsViewModel(
             baseUrl: Environment.local.baseURL,
             remoteDataLoader: remoteDataLoader
         )

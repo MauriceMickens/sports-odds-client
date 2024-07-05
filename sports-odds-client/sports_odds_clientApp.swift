@@ -13,12 +13,19 @@ import SwiftUI
 struct sports_odds_clientApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject var appState = AppState()
+    @StateObject var appState = AppState(authenticationManager: AuthenticationManager())
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-                .environmentObject(appState)
+            if appState.isSignedIn {
+                MainTabView()
+                    .environmentObject(appState)
+            } else {
+                NavigationStack {
+                    AuthenticationView()
+                        .environmentObject(appState)
+                }
+            }
         }
     }
 }

@@ -7,13 +7,19 @@
 
 import Foundation
 
-final class ViewModelFactory {
-    let client: URLSessionHTTPClient
-    let remoteDataLoader: RemoteDataLoader
+final class ViewModelFactory: ObservableObject {
+    let remoteDataLoader: any DataLoader
+    let authenticationManager: AuthenticationManagerProtocol
+    weak var appState: AppState?
     
-    init() {
-        self.client = URLSessionHTTPClient()
-        self.remoteDataLoader = RemoteDataLoader(client: client)
+    init(
+        authenticationManager: AuthenticationManagerProtocol,
+        remoteDataLoader: any DataLoader,
+        appState: AppState
+    ) {
+        self.authenticationManager = authenticationManager
+        self.remoteDataLoader = remoteDataLoader
+        self.appState = appState
     }
     
     @MainActor
@@ -23,4 +29,26 @@ final class ViewModelFactory {
             remoteDataLoader: remoteDataLoader
         )
     }
+    
+    @MainActor
+    func makeSignInEmailViewModel() -> SignInEmailViewModel? {
+        guard let appState = appState else {
+            return nil
+        }
+        return SignInEmailViewModel(authenticationManager: authenticationManager, appState: appState)
+    }
+    
+    @MainActor
+    func makeSettingsViewModel() -> SettingsViewModel {
+        return .init(authenticationManager: authenticationManager)
+    }
+    
+    @MainActor
+    func makeCreateAccountViewModel() -> CreateAccountViewModel? {
+        guard let appState = appState else {
+            return nil
+        }
+        return CreateAccountViewModel(authenticationManager: authenticationManager)
+    }
 }
+

@@ -7,8 +7,9 @@
 
 import Foundation
 
-enum LoadingState<T> {
+enum LoadingState<T, E> {
+    case idle
     case loading
     case loaded(objects: T)
-    case error(error: RemoteDataError)
+    case error(error: E)
 }

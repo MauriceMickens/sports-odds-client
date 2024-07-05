@@ -42,6 +42,8 @@ struct OddsView: View {
                             }
                         case .error(let error):
                             Text(error.reason)
+                        case .idle:
+                            let _ = print("hi!")
                         }
                     }
                 }

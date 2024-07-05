@@ -10,33 +10,38 @@ import SwiftUI
 
 struct MainTabView: View {
     @EnvironmentObject var appState: AppState
-    @State var viewModelFactory = ViewModelFactory()
     @State private var selectedTab = 0
     
     var body: some View {
-        HeaderView(title: "Betlytics")
-        
-        TabView(selection: $selectedTab) {
-            OddsView(viewModel: viewModelFactory.makeOddsViewModel())
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Betlytics")
-                }
-                .tag(0)
+        VStack {
+            HeaderView(title: "Betlytics")
             
-            Text("Tab 1")
-                .tabItem {
-                    Image(systemName: "message.circle")
-                    Text("AI Picks")
+            if let viewModelFactory = appState.viewModelFactory {
+                TabView(selection: $selectedTab) {
+                    OddsView(viewModel: viewModelFactory.makeOddsViewModel())
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("Betlytics")
+                        }
+                        .tag(0)
+                    
+                    Text("Tab AI")
+                        .tabItem {
+                            Image(systemName: "message.circle")
+                            Text("AI Picks")
+                        }
+                        .tag(1)
+                    
+                    SettingsView(viewModel: viewModelFactory.makeSettingsViewModel())
+                        .tabItem {
+                            Image(systemName: "gear")
+                            Text("Settings")
+                        }
+                        .tag(2)
                 }
-                .tag(1)
-            
-            Text("Tab 3")
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
-                }
-                .tag(2)
+            } else {
+                Text("Loading...")
+            }
         }
     }
 }

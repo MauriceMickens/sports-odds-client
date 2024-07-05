@@ -10,8 +10,9 @@ import Foundation
 protocol ViewModelProtocol {
     associatedtype ObjectType
     associatedtype StateType
+    associatedtype ErrorType
     
-    @MainActor var loadingState: LoadingState<StateType> { get }
+    @MainActor var loadingState: LoadingState<StateType, ErrorType> { get }
     @MainActor var hasMore: Bool { get }
     @MainActor var objects: [ObjectType] { get }
     

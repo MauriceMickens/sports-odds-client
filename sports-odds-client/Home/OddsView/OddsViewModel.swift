@@ -13,7 +13,7 @@ final class OddsViewModel: ObservableObject, ViewModelProtocol {
     typealias ObjectType = Odds
     typealias StateType = [Odds]
     
-    @Published var loadingState: LoadingState<[Odds]> = .loading
+    @Published var loadingState: LoadingState<[Odds], RemoteDataError> = .loading
     @Published var hasMore = true
     @Published var dataLoaded = false
     
@@ -107,7 +107,12 @@ final class OddsViewModel: ObservableObject, ViewModelProtocol {
             )
         }
         
-        guard let feedUrl = URL.makeOddsURL(base: baseUrl.absoluteString, sport: firstSport.key, page: page, limit: limit) else {
+        guard let feedUrl = URL.makeOddsURL(
+            base: baseUrl.absoluteString,
+            sport: firstSport.key, 
+            page: page,
+            limit: limit
+        ) else {
             loadingState = .error(error: .missingURL)
             return
         }

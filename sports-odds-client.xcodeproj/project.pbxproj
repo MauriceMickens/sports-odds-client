@@ -15,6 +15,8 @@
 		D76121C12C383F8800E13EB5 /* AuthUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76121C02C383F8800E13EB5 /* AuthUserError.swift */; };
 		D76121C52C38495800E13EB5 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76121C42C38495800E13EB5 /* CreateAccountViewModel.swift */; };
 		D76121C82C384DE500E13EB5 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76121C72C384DE500E13EB5 /* CreateAccountView.swift */; };
+		D76121CA2C385BA600E13EB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D76121C92C385BA600E13EB5 /* GoogleService-Info.plist */; };
+		D76121CD2C38623600E13EB5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76121CC2C38623600E13EB5 /* Utilities.swift */; };
 		D7E083632C37096A001E46A1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E083622C37096A001E46A1 /* AuthenticationView.swift */; };
 		D7E083652C37097C001E46A1 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E083642C37097C001E46A1 /* AuthenticationViewModel.swift */; };
 		D7E083682C370A49001E46A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D7E083672C370A49001E46A1 /* GoogleSignIn */; };
@@ -26,7 +28,6 @@
 		D7E083762C370D3D001E46A1 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E083752C370D3D001E46A1 /* SignInGoogleHelper.swift */; };
 		D7E083792C370DF6001E46A1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E083782C370DF6001E46A1 /* UserManager.swift */; };
 		DE2A64E62C2F9C9600FE27F3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A64E52C2F9C9600FE27F3 /* Config.swift */; };
-		DE4015482C36F74E0057100D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE4015472C36F74E0057100D /* GoogleService-Info.plist */; };
 		DE40154B2C36F8960057100D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DE40154A2C36F8960057100D /* FirebaseAnalytics */; };
 		DE40154D2C36F8960057100D /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = DE40154C2C36F8960057100D /* FirebaseAnalyticsOnDeviceConversion */; };
 		DE40154F2C36F8960057100D /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE40154E2C36F8960057100D /* FirebaseAnalyticsSwift */; };
@@ -82,8 +83,6 @@
 		DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3209E2C31BD1F0017BA11 /* Sport.swift */; };
 		DEF320A12C3205450017BA11 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A02C3205450017BA11 /* CardViewModel.swift */; };
 		DEF320A32C324B370017BA11 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A22C324B370017BA11 /* MainTabView.swift */; };
-		DEF320A52C324F9E0017BA11 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A42C324F9E0017BA11 /* ViewModelFactory.swift */; };
-		DEF320A72C32507D0017BA11 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF320A62C32507D0017BA11 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +94,9 @@
 		D76121C02C383F8800E13EB5 /* AuthUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserError.swift; sourceTree = "<group>"; };
 		D76121C42C38495800E13EB5 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		D76121C72C384DE500E13EB5 /* CreateAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		D76121C92C385BA600E13EB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D76121CB2C385C6800E13EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D76121CC2C38623600E13EB5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D7E083622C37096A001E46A1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		D7E083642C37097C001E46A1 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D7E0836D2C370B15001E46A1 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
@@ -104,7 +106,6 @@
 		D7E083752C370D3D001E46A1 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
 		D7E083782C370DF6001E46A1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		DE2A64E52C2F9C9600FE27F3 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		DE4015472C36F74E0057100D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE6867A92C28E07400193745 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		DE9A7ED62C338618008446A9 /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		DE9A7EDA2C33867F008446A9 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
@@ -138,8 +139,6 @@
 		DEF3209E2C31BD1F0017BA11 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		DEF320A02C3205450017BA11 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		DEF320A22C324B370017BA11 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		DEF320A42C324F9E0017BA11 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
-		DEF320A62C32507D0017BA11 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +214,7 @@
 				D76121BE2C38379A00E13EB5 /* MockAuthenticationManager.swift */,
 				D7E083732C370D2E001E46A1 /* SignInAppleHelper.swift */,
 				D7E083752C370D3D001E46A1 /* SignInGoogleHelper.swift */,
+				D76121CC2C38623600E13EB5 /* Utilities.swift */,
 				D76121B42C3711CF00E13EB5 /* Models */,
 				D7E0836C2C370ADC001E46A1 /* AuthenticationView */,
 			);
@@ -278,11 +278,10 @@
 		DEDCAFFF2C1F967100B4A684 /* sports-odds-client */ = {
 			isa = PBXGroup;
 			children = (
-				DE4015472C36F74E0057100D /* GoogleService-Info.plist */,
+				D76121CB2C385C6800E13EB5 /* Info.plist */,
+				D76121C92C385BA600E13EB5 /* GoogleService-Info.plist */,
 				DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */,
 				DEF320A22C324B370017BA11 /* MainTabView.swift */,
-				DEF320A62C32507D0017BA11 /* AppState.swift */,
-				DEF320A42C324F9E0017BA11 /* ViewModelFactory.swift */,
 				DEDCB0312C1F9FEC00B4A684 /* Home */,
 				D76121BD2C375FD100E13EB5 /* Settings */,
 				D7E083772C370DD7001E46A1 /* Firestore */,
@@ -362,7 +361,6 @@
 				DEDCB0322C1FA00E00B4A684 /* OddsView */,
 				DEDCB0332C1FA01900B4A684 /* CardView */,
 				DE2A64E42C2F9C6900FE27F3 /* Models */,
-				DE9A7EDC2C338F9A008446A9 /* BookmakerCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -381,6 +379,7 @@
 		DEDCB0332C1FA01900B4A684 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
+				DE9A7EDC2C338F9A008446A9 /* BookmakerCardView.swift */,
 				DE6867A92C28E07400193745 /* CardView.swift */,
 				DEF320A02C3205450017BA11 /* CardViewModel.swift */,
 				DEBBF8E62C3642E600AD1E53 /* CardDetailView.swift */,
@@ -479,8 +478,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEDCB0082C1F967400B4A684 /* Preview Assets.xcassets in Resources */,
+				D76121CA2C385BA600E13EB5 /* GoogleService-Info.plist in Resources */,
 				DEDCB0052C1F967400B4A684 /* Assets.xcassets in Resources */,
-				DE4015482C36F74E0057100D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +525,6 @@
 				D7E083702C370B2C001E46A1 /* SignInEmailViewModel.swift in Sources */,
 				D7E083722C370B6D001E46A1 /* AuthenticationManager.swift in Sources */,
 				DED1A4B62C30662500C1BC6F /* OddsViewModel+MockData.swift in Sources */,
-				DEF320A72C32507D0017BA11 /* AppState.swift in Sources */,
 				DEBBF8E12C36358000AD1E53 /* PlayerImageUrls.swift in Sources */,
 				DEBBF8E92C36582600AD1E53 /* CardDetailViewModel.swift in Sources */,
 				DED1A4B82C3067D600C1BC6F /* LoadingState.swift in Sources */,
@@ -535,10 +533,10 @@
 				DEDCB0352C1FA06200B4A684 /* OddsViewModel.swift in Sources */,
 				DE6867AA2C28E07400193745 /* CardView.swift in Sources */,
 				DE9A7EDF2C3396D9008446A9 /* Market.swift in Sources */,
-				DEF320A52C324F9E0017BA11 /* ViewModelFactory.swift in Sources */,
 				D7E083632C37096A001E46A1 /* AuthenticationView.swift in Sources */,
 				DED1A4B12C305EE500C1BC6F /* RemoteDataLoader.swift in Sources */,
 				DE9A7EDB2C33867F008446A9 /* HorizontalScrollView.swift in Sources */,
+				D76121CD2C38623600E13EB5 /* Utilities.swift in Sources */,
 				DEDCB01E2C1F99CB00B4A684 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +674,7 @@
 				DEVELOPMENT_TEAM = P6UWL5TAWD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sports-odds-client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -705,6 +704,7 @@
 				DEVELOPMENT_TEAM = P6UWL5TAWD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sports-odds-client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

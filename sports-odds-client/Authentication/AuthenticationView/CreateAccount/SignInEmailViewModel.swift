@@ -6,19 +6,18 @@
 //
 
 import Foundation
+import Observation
 
-@MainActor
-final class SignInEmailViewModel: ObservableObject {
-    @Published var loadingState: LoadingState<DBUser, RemoteDataError> = .idle
-    @Published var email = ""
-    @Published var password = ""
+@MainActor @Observable
+final class SignInEmailViewModel {
+    var loadingState: LoadingState<DBUser, RemoteDataError> = .idle
+    var email = ""
+    var password = ""
     
     private var authenticationManager: AuthenticationManagerProtocol
-    private var appState: AppState
     
-    init(authenticationManager: AuthenticationManagerProtocol, appState: AppState) {
+    init(authenticationManager: AuthenticationManagerProtocol) {
         self.authenticationManager = authenticationManager
-        self.appState = appState
     }
     
     func signIn() async {
@@ -32,7 +31,7 @@ final class SignInEmailViewModel: ObservableObject {
             let authDataResult = try await authenticationManager.signInUser(email: email, password: password)
             let user = DBUser(auth: authDataResult)
             loadingState = .loaded(objects: user)
-            appState.isSignedIn = true
+            authenticationManager.isSignedIn = true
         } catch {
             loadingState = .error(error: .network(error: error))
         }

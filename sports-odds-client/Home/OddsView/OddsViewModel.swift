@@ -7,31 +7,32 @@
 
 import Combine
 import Foundation
+import Observation
 
-@MainActor
-final class OddsViewModel: ObservableObject, ViewModelProtocol {
+@MainActor @Observable
+final class OddsViewModel: ViewModelProtocol {
     typealias ObjectType = Odds
     typealias StateType = [Odds]
     
-    @Published var loadingState: LoadingState<[Odds], RemoteDataError> = .loading
-    @Published var hasMore = true
-    @Published var dataLoaded = false
+    var loadingState: LoadingState<[Odds], RemoteDataError> = .loading
+    var hasMore = true
+    var dataLoaded = false
     
-    @Published var selectedSport: Sport = .init(key: "", description: "") {
+    var selectedSport: Sport = .init(key: "", description: "") {
         didSet {
             filterSports()
         }
     }
-    @Published var selectedMarket: Market = .init(key: "", description: "") {
+    var selectedMarket: Market = .init(key: "", description: "") {
         didSet {
             filterOdds()
         }
     }
     
-    @Published var objects: [Odds] = []
-    @Published var activeSports: [Sport] = []
-    @Published var activeMarkets: [Market] = []
-    @Published var filteredObjects: [Odds] = []
+    var objects: [Odds] = []
+    var activeSports: [Sport] = []
+    var activeMarkets: [Market] = []
+    var filteredObjects: [Odds] = []
     
     private let baseUrl: URL
     private let remoteDataLoader: any DataLoader

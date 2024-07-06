@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct CardView: View {
-    @StateObject private var viewModel: CardViewModel
+    @State var viewModel: CardViewModel
     private let selectedMarket: Market
     
-    init(selectedMarket: Market, odds: Odds) {
-        _viewModel = StateObject(wrappedValue: CardViewModel(odds: odds))
+    init(viewModel: CardViewModel, selectedMarket: Market) {
+        self.viewModel = viewModel
         self.selectedMarket = selectedMarket
     }
     
@@ -73,8 +73,8 @@ struct CardView: View {
 
 #Preview {
     CardView(
-        selectedMarket: .init(key: "points", description: "Points"), 
-        odds: Odds.random
+        viewModel: .init(odds: Odds.random),
+        selectedMarket: .init(key: "points", description: "Points")
     )
         .padding()
         .background(Color.black)

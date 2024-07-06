@@ -9,7 +9,11 @@ import Foundation
 import SwiftUI
 
 struct CreateAccountView: View {
-    @ObservedObject var viewModel: CreateAccountViewModel
+    @State var viewModel: CreateAccountViewModel
+    
+    init(viewModel: CreateAccountViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -20,25 +24,34 @@ struct CreateAccountView: View {
                 .fontWeight(.bold)
                 .padding(.bottom, 20)
 
-            TextField("Email", text: $viewModel.email)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-                .autocapitalization(.none)
-                .keyboardType(.emailAddress)
-                .padding(.horizontal)
-
-            SecureField("Password", text: $viewModel.password)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-                .autocapitalization(.none)
-                .padding(.horizontal)
+            VStack(spacing: 15) {
+                TextField("Email", text: $viewModel.email)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .cornerRadius(10)
+                    .autocapitalization(.none)
+                    .keyboardType(.emailAddress)
+                    .disableAutocorrection(true)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                    )
+                
+                SecureField("Password", text: $viewModel.password)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                    )
+            }
+            .padding(.horizontal)
 
             if case let .error(error) = viewModel.loadingState {
-                Text(error.localizedDescription)
+                Text(error.reason)
                     .foregroundColor(.red)
-                    .padding()
+                    .padding(.horizontal)
                     .multilineTextAlignment(.center)
             }
 
@@ -97,8 +110,9 @@ struct CreateAccountView: View {
 struct CreateAccountView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            CreateAccountView(viewModel: CreateAccountViewModel(authenticationManager: MockAuthenticationManager(isSignedIn: false)))
+            CreateAccountView(viewModel: .init(authenticationManager: MockAuthenticationManager(isSignedIn: false)))
         }
     }
 }
+
 

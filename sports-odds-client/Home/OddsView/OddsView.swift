@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct OddsView: View {
-    @ObservedObject var viewModel: OddsViewModel
+    
+    @SwiftUI.Environment(RemoteDataLoader.self) private var remoteDataLoader
+    @State var viewModel: OddsViewModel
     @State private var selectedOdds: Odds?
+    
+    init(viewModel: OddsViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
@@ -32,8 +38,8 @@ struct OddsView: View {
                         case .loaded:
                             ForEach(viewModel.filteredObjects) { odds in
                                 CardView(
-                                    selectedMarket: viewModel.selectedMarket,
-                                    odds: odds
+                                    viewModel: .init(odds: odds),
+                                    selectedMarket: viewModel.selectedMarket
                                 )
                                 .onTapGesture {
                                     selectedOdds = odds

@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import Observation
 
-@MainActor
+@MainActor @Observable
 final class SettingsViewModel: ObservableObject {
     
-    @Published var authProviders: [AuthProviderOption] = []
-    @Published var authUser: AuthDataResultModel? = nil
-    @Published var loadingState: LoadingState<Void, AuthUserError> = .idle
+    var authProviders: [AuthProviderOption] = []
+    var authUser: AuthDataResultModel? = nil
+    var loadingState: LoadingState<Void, AuthUserError> = .idle
     
     private var authenticationManager: AuthenticationManagerProtocol
     
@@ -21,6 +22,7 @@ final class SettingsViewModel: ObservableObject {
     }
 
     func loadAuthProviders() {
+        loadingState = .loading
         do {
             let providers = try authenticationManager.getProviders()
             authProviders = providers
@@ -31,6 +33,7 @@ final class SettingsViewModel: ObservableObject {
     }
     
     func loadAuthUser() {
+        loadingState = .loading
         do {
             authUser = try authenticationManager.getAuthenticatedUser()
             loadingState = .loaded(objects: ())

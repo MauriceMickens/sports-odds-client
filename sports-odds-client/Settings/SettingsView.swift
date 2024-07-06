@@ -10,7 +10,11 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @ObservedObject var viewModel: SettingsViewModel
+    @State var viewModel: SettingsViewModel
+    
+    init(viewModel: SettingsViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
@@ -30,14 +34,15 @@ struct SettingsView: View {
                 }
             
             case .idle, .loaded:
-                List {
-                    if viewModel.authProviders.isEmpty {
-                        Text("No data available.")
-                    }
-                    logOutButton
-                    deleteAccountButton
-                    if viewModel.authProviders.contains(.email) {
-                        emailSection
+                if viewModel.authUser == nil {
+                    Text("No Data Available")
+                } else {
+                    List {
+                        logOutButton
+                        deleteAccountButton
+                        if viewModel.authProviders.contains(.email) {
+                            emailSection
+                        }
                     }
                 }
             }

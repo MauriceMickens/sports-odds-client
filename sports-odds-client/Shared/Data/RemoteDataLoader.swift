@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import Observation
 import UIKit
 
+@Observable
 final class RemoteDataLoader: DataLoader {
     
     typealias FailureModel = RemoteDataError

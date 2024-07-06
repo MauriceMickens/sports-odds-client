@@ -8,9 +8,10 @@
 import Combine
 import SwiftUI
 
-class CardViewModel: ObservableObject {
-    @Published var playerImage: Image?
-    @Published var isLoading: Bool = true
+@Observable
+class CardViewModel {
+    var playerImage: Image?
+    var isLoading: Bool = true
     
     private var cancellable: AnyCancellable?
     let odds: Odds

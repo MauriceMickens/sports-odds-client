@@ -10,8 +10,13 @@ import GoogleSignInSwift
 import SwiftUI
 
 struct AuthenticationView: View {
-    @StateObject private var viewModel = AuthenticationViewModel()
-    @EnvironmentObject var appState: AppState
+    
+    @SwiftUI.Environment(AuthenticationManager.self) var authenticationManager
+    @State var viewModel: AuthenticationViewModel
+    
+    init(viewModel: AuthenticationViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -22,60 +27,51 @@ struct AuthenticationView: View {
                 .fontWeight(.bold)
                 .padding(.bottom, 40)
 
-            if let viewModelFactory = appState.viewModelFactory,
-               let signInEmailViewModel = viewModelFactory.makeSignInEmailViewModel(),
-               let createAccountViewModel = viewModelFactory.makeCreateAccountViewModel() {
-                
-                NavigationLink(destination: SignInEmailView(viewModel: signInEmailViewModel)) {
-                    Text("Sign In With Email")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
-                }
-
-                NavigationLink(destination: CreateAccountView(viewModel: createAccountViewModel)) {
-                    Text("Create Account")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.green)
-                        .cornerRadius(10)
-                        .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
-                }
-
-                GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)) {
-                    Task {
-                        await handleSignIn { try await viewModel.signInGoogle() }
-                    }
-                }
-                .frame(height: 55)
-                .frame(maxWidth: .infinity)
-                .cornerRadius(10)
-                .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
-
-                Button(action: {
-                    Task {
-                        await handleSignIn { try await viewModel.signInApple() }
-                    }
-                }) {
-                    Text("Sign In with Apple")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.black)
-                        .cornerRadius(10)
-                        .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
-                }
-            } else {
-                Text("Loading...")
+            NavigationLink(destination: SignInEmailView(viewModel: .init(authenticationManager: authenticationManager))) {
+                Text("Sign In With Email")
                     .font(.headline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
+            }
+
+            NavigationLink(destination: CreateAccountView(viewModel: .init(authenticationManager: authenticationManager))) {
+                Text("Create Account")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
+            }
+
+            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)) {
+                Task {
+                    await handleSignIn { await viewModel.signInGoogle() }
+                }
+            }
+            .frame(height: 55)
+            .frame(maxWidth: .infinity)
+            .cornerRadius(10)
+            .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
+
+            Button(action: {
+                Task {
+                    await handleSignIn { await viewModel.signInApple() }
+                }
+            }) {
+                Text("Sign In with Apple")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.black)
+                    .cornerRadius(10)
+                    .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
             }
 
             Spacer()
@@ -112,7 +108,11 @@ struct AuthenticationView: View {
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            AuthenticationView().environmentObject(AppState(authenticationManager: MockAuthenticationManager(isSignedIn: false)))
+            AuthenticationView(
+                viewModel: AuthenticationViewModel(
+                    authenticationManager: MockAuthenticationManager(isSignedIn: false)
+                )
+            )
         }
     }
 }

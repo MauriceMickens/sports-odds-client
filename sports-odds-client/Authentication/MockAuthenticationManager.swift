@@ -56,4 +56,12 @@ class MockAuthenticationManager: AuthenticationManagerProtocol {
     func linkApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel {
         return .init()
     }
+    
+    func signInWithGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel {
+        return .init()
+    }
+    
+    func signInWithApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel {
+        return .init()
+    }
 }

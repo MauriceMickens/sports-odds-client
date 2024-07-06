@@ -7,23 +7,27 @@
 
 import Firebase
 import FirebaseCore
+import FirebaseAuth
+import GoogleSignIn
 import SwiftUI
 
 @main
 struct sports_odds_clientApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject var appState = AppState(authenticationManager: AuthenticationManager())
+    @State private var authenticationManager = AuthenticationManager()
+    @State private var remoteDataLoader = RemoteDataLoader()
     
     var body: some Scene {
         WindowGroup {
-            if appState.isSignedIn {
+            if authenticationManager.isSignedIn {
                 MainTabView()
-                    .environmentObject(appState)
+                    .environment(authenticationManager)
+                    .environment(remoteDataLoader)
             } else {
                 NavigationStack {
-                    AuthenticationView()
-                        .environmentObject(appState)
+                    AuthenticationView(viewModel: .init(authenticationManager: authenticationManager))
+                        .environment(authenticationManager)
                 }
             }
         }
@@ -37,5 +41,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     ) -> Bool {
         FirebaseApp.configure()
         return true
+    }
+    
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
     }
 }

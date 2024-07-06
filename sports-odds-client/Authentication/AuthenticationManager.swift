@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import Observation
 
 enum AuthProviderOption: String {
     case email = "password"
@@ -36,12 +37,15 @@ protocol AuthenticationManagerProtocol {
     func linkApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel
     
     func updateSignInState(isSignedIn: Bool)
+    
+    func signInWithGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel
+    func signInWithApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel
 }
 
-
-final class AuthenticationManager: ObservableObject, AuthenticationManagerProtocol {
+@Observable
+final class AuthenticationManager: AuthenticationManagerProtocol {
     
-    @Published var isSignedIn: Bool = false
+    var isSignedIn: Bool = false
     
     func getAuthenticatedUser() throws -> AuthDataResultModel {
         guard let user = Auth.auth().currentUser else {

@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct SignInEmailView: View {
-    @ObservedObject var viewModel: SignInEmailViewModel
+    @State var viewModel: SignInEmailViewModel
+    
+    init(viewModel: SignInEmailViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack(spacing: 20) {
@@ -82,9 +86,8 @@ struct SignInEmailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             SignInEmailView(
-                viewModel: SignInEmailViewModel(
-                    authenticationManager: MockAuthenticationManager(isSignedIn: false),
-                    appState: AppState(authenticationManager: MockAuthenticationManager(isSignedIn: false))
+                viewModel: .init(
+                    authenticationManager: MockAuthenticationManager(isSignedIn: false)
                 )
             )
         }

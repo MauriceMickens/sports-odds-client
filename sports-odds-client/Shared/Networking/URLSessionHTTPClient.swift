@@ -31,4 +31,22 @@ class URLSessionHTTPClient: HTTPClient {
             throw NetworkError.network(error: error)
         }
     }
+    
+    func post(request: URLRequest) async throws -> HTTPClientResponse {
+        do {
+            let (data, response) = try await session.data(for: request)
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw NetworkError.unexpectedValue
+            }
+            
+            guard 200..<299 ~= httpResponse.statusCode else {
+                throw NetworkError.nonSuccessStatusCode
+            }
+            
+            return (data: data, response: httpResponse)
+        } catch {
+            throw NetworkError.network(error: error)
+        }
+    }
 }

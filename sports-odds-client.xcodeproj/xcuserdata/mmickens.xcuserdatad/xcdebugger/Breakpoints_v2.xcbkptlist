@@ -3,4 +3,96 @@
    uuid = "8538D8EC-D73D-4C08-9849-83A72B300879"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96850C2A-6734-463E-8E28-F6F2A1B1D572"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "sports-odds-client/Authentication/AuthenticationView/AuthenticationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "signInGoogle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66B94C68-9F3D-4D4F-BBD5-2D707375350A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "sports-odds-client/Shared/Data/RemoteDataLoader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "post(url:body:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "66B94C68-9F3D-4D4F-BBD5-2D707375350A - 97194946620283c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for sports_odds_client.RemoteDataLoader.post&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(url: Foundation.URL, body: &#x3c4;_0_0) async throws -&gt; &#x3c4;_0_1"
+                  moduleName = "sports-odds-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmickens/Development/sports-odds-client/sports-odds-client/Shared/Data/RemoteDataLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86">
+               </Location>
+               <Location
+                  uuid = "66B94C68-9F3D-4D4F-BBD5-2D707375350A - f1b0bd5ef975402a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for sports_odds_client.RemoteDataLoader.post&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(url: Foundation.URL, body: &#x3c4;_0_0) async throws -&gt; &#x3c4;_0_1"
+                  moduleName = "sports-odds-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmickens/Development/sports-odds-client/sports-odds-client/Shared/Data/RemoteDataLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86">
+               </Location>
+               <Location
+                  uuid = "66B94C68-9F3D-4D4F-BBD5-2D707375350A - 67c33e4af209cfc7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for sports_odds_client.RemoteDataLoader.post&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(url: Foundation.URL, body: &#x3c4;_0_0) async throws -&gt; &#x3c4;_0_1"
+                  moduleName = "sports-odds-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmickens/Development/sports-odds-client/sports-odds-client/Shared/Data/RemoteDataLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86">
+               </Location>
+               <Location
+                  uuid = "66B94C68-9F3D-4D4F-BBD5-2D707375350A - 3fd62bd0ba3575c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for sports_odds_client.RemoteDataLoader.post&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(url: Foundation.URL, body: &#x3c4;_0_0) async throws -&gt; &#x3c4;_0_1"
+                  moduleName = "sports-odds-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmickens/Development/sports-odds-client/sports-odds-client/Shared/Data/RemoteDataLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

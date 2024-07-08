@@ -72,5 +72,33 @@ final class RemoteDataLoader: DataLoader {
             throw RemoteDataError.network(error: error)
         }
     }
+    
+    func post<RequestModel: Encodable, ResponseModel: Decodable>(
+        url: URL,
+        body: RequestModel
+    ) async throws -> ResponseModel {
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try JSONEncoder().encode(body)
+            
+            let (data, response) = try await client.post(request: request)
+            
+            guard response.statusCode == 200 else {
+                throw RemoteDataError.network(error: URLError(.badServerResponse))
+            }
+            
+            let result: Result<ResponseModel, RemoteDataError> = DataMapper.map(data)
+            switch result {
+            case .success(let responseModel):
+                return responseModel
+            case .failure(let error):
+                throw RemoteDataError.decoding(error: error)
+            }
+        } catch {
+            throw RemoteDataError.network(error: error)
+        }
+    }
 }
 

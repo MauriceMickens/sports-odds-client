@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D73828FA2C39E100000CA3D7 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73828F92C39E100000CA3D7 /* DBUser.swift */; };
+		D73828FC2C39E607000CA3D7 /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73828FB2C39E607000CA3D7 /* MockDataLoader.swift */; };
 		D76121B62C3711DA00E13EB5 /* GoogleSignInResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76121B52C3711DA00E13EB5 /* GoogleSignInResultModel.swift */; };
 		D76121B82C3711FE00E13EB5 /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76121B72C3711FE00E13EB5 /* AuthDataResultModel.swift */; };
 		D76121BA2C375F9F00E13EB5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76121B92C375F9F00E13EB5 /* SettingsView.swift */; };
@@ -86,6 +88,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D73828F92C39E100000CA3D7 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
+		D73828FB2C39E607000CA3D7 /* MockDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
 		D76121B52C3711DA00E13EB5 /* GoogleSignInResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInResultModel.swift; sourceTree = "<group>"; };
 		D76121B72C3711FE00E13EB5 /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
 		D76121B92C375F9F00E13EB5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 		D76121C92C385BA600E13EB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D76121CB2C385C6800E13EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D76121CC2C38623600E13EB5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		D76121CE2C39B06400E13EB5 /* sports-odds-client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "sports-odds-client.entitlements"; sourceTree = "<group>"; };
 		D7E083622C37096A001E46A1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		D7E083642C37097C001E46A1 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D7E0836D2C370B15001E46A1 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
@@ -182,6 +187,7 @@
 			children = (
 				D76121B52C3711DA00E13EB5 /* GoogleSignInResultModel.swift */,
 				D76121B72C3711FE00E13EB5 /* AuthDataResultModel.swift */,
+				D73828F92C39E100000CA3D7 /* DBUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 		DEDCAFFF2C1F967100B4A684 /* sports-odds-client */ = {
 			isa = PBXGroup;
 			children = (
+				D76121CE2C39B06400E13EB5 /* sports-odds-client.entitlements */,
 				D76121CB2C385C6800E13EB5 /* Info.plist */,
 				D76121C92C385BA600E13EB5 /* GoogleService-Info.plist */,
 				DEDCB0002C1F967100B4A684 /* sports_odds_clientApp.swift */,
@@ -351,6 +358,7 @@
 				DED1A4B72C3067D600C1BC6F /* LoadingState.swift */,
 				DEDCB02D2C1F9CCD00B4A684 /* RemoteDataError.swift */,
 				DED1A4B02C305EE500C1BC6F /* RemoteDataLoader.swift */,
+				D73828FB2C39E607000CA3D7 /* MockDataLoader.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -509,6 +517,7 @@
 				DE9A7ED72C338618008446A9 /* SelectableItem.swift in Sources */,
 				D7E083792C370DF6001E46A1 /* UserManager.swift in Sources */,
 				DEF3209F2C31BD1F0017BA11 /* Sport.swift in Sources */,
+				D73828FA2C39E100000CA3D7 /* DBUser.swift in Sources */,
 				D76121B82C3711FE00E13EB5 /* AuthDataResultModel.swift in Sources */,
 				DEF320A32C324B370017BA11 /* MainTabView.swift in Sources */,
 				DEDCB01C2C1F99CB00B4A684 /* HTTPClient.swift in Sources */,
@@ -521,6 +530,7 @@
 				DEBBF8E72C3642E600AD1E53 /* CardDetailView.swift in Sources */,
 				DE2A64E62C2F9C9600FE27F3 /* Config.swift in Sources */,
 				DED1A4BA2C3078DB00C1BC6F /* ViewModel.swift in Sources */,
+				D73828FC2C39E607000CA3D7 /* MockDataLoader.swift in Sources */,
 				D76121B62C3711DA00E13EB5 /* GoogleSignInResultModel.swift in Sources */,
 				D7E083702C370B2C001E46A1 /* SignInEmailViewModel.swift in Sources */,
 				D7E083722C370B6D001E46A1 /* AuthenticationManager.swift in Sources */,
@@ -668,10 +678,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "sports-odds-client/sports-odds-client.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sports-odds-client/Preview Content\"";
-				DEVELOPMENT_TEAM = P6UWL5TAWD;
+				DEVELOPMENT_TEAM = 9YZSML8VWX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "sports-odds-client/Info.plist";
@@ -685,8 +697,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mickens.sports-odds-client";
+				PRODUCT_BUNDLE_IDENTIFIER = com.loudskies.betlytics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -698,10 +711,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "sports-odds-client/sports-odds-client.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sports-odds-client/Preview Content\"";
-				DEVELOPMENT_TEAM = P6UWL5TAWD;
+				DEVELOPMENT_TEAM = 9YZSML8VWX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "sports-odds-client/Info.plist";
@@ -715,8 +730,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mickens.sports-odds-client";
+				PRODUCT_BUNDLE_IDENTIFIER = com.loudskies.betlytics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

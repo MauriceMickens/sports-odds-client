@@ -24,4 +24,22 @@ extension URL {
         ]
         return components?.url
     }
+
+    static func makeCreateUserURL(base: String) -> URL? {
+        var components = URLComponents(string: base)
+        components?.path = "/api/v1/users"
+        return components?.url
+    }
+
+    static func makeGetUserURL(base: String, userId: String) -> URL? {
+        var components = URLComponents(string: base)
+        components?.path = "/api/v1/users/\(userId)"
+        return components?.url
+    }
+
+    static func makeUpdateUserURL(base: String, userId: String) -> URL? {
+        var components = URLComponents(string: base)
+        components?.path = "/api/v1/users/\(userId)"
+        return components?.url
+    }
 }

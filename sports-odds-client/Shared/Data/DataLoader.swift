@@ -13,4 +13,5 @@ protocol DataLoader {
     
     func load<Model: Decodable>(url: URL) async throws -> Model
     func load(url: URL) async throws -> UIImage
+    func post<RequestModel: Encodable, ResponseModel: Decodable>(url: URL, body: RequestModel) async throws -> ResponseModel
 }

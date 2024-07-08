@@ -54,24 +54,24 @@ final class SignInAppleHelper: NSObject {
     }
 
     func startSignInWithAppleFlow(completion: @escaping (Result<SignInWithAppleResult, Error>) -> Void) {
-//        guard let topVC = Utilities.shared.topViewController() else {
-//            completion(.failure(URLError(.badURL)))
-//            return
-//        }
-//        
-//        let nonce = randomNonceString()
-//        currentNonce = nonce
-//        completionHandler = completion
-//        
-//        let appleIDProvider = ASAuthorizationAppleIDProvider()
-//        let request = appleIDProvider.createRequest()
-//        request.requestedScopes = [.fullName, .email]
-//        request.nonce = sha256(nonce)
-//        
-//        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-//        authorizationController.delegate = self
-//        authorizationController.presentationContextProvider = topVC
-//        authorizationController.performRequests()
+        guard let topVC = Utilities.shared.topViewController() else {
+            completion(.failure(URLError(.badURL)))
+            return
+        }
+        
+        let nonce = randomNonceString()
+        currentNonce = nonce
+        completionHandler = completion
+        
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        request.nonce = sha256(nonce)
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = topVC
+        authorizationController.performRequests()
     }
     
     // Adapted from https://auth0.com/docs/api-auth/tutorials/nonce#generate-a-cryptographically-random-nonce

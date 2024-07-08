@@ -5,6 +5,7 @@
 //  Created by Maurice Mickens on 7/4/24.
 //
 
+import AuthenticationServices
 import GoogleSignIn
 import GoogleSignInSwift
 import SwiftUI
@@ -64,14 +65,16 @@ struct AuthenticationView: View {
                     await handleSignIn { await viewModel.signInApple() }
                 }
             }) {
-                Text("Sign In with Apple")
-                    .font(.headline)
-                    .foregroundColor(.white)
+                SignInWithAppleButtonViewRepresentable(type: .default, style: .black)
+                    .allowsHitTesting(false)
                     .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.black)
-                    .cornerRadius(10)
-                    .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
+            }
+            
+            if case let .error(error) = viewModel.loadingState {
+               Text(error.reason)
+                   .foregroundColor(.red)
+                   .multilineTextAlignment(.center)
+                   .padding()
             }
 
             Spacer()
@@ -110,6 +113,8 @@ struct AuthenticationView_Previews: PreviewProvider {
         NavigationStack {
             AuthenticationView(
                 viewModel: AuthenticationViewModel(
+                    baseUrl: Environment.local.baseURL,
+                    remoteDataLoader: MockRemoteDataLoader(),
                     authenticationManager: MockAuthenticationManager(isSignedIn: false)
                 )
             )

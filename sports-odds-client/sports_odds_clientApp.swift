@@ -26,8 +26,14 @@ struct sports_odds_clientApp: App {
                     .environment(remoteDataLoader)
             } else {
                 NavigationStack {
-                    AuthenticationView(viewModel: .init(authenticationManager: authenticationManager))
-                        .environment(authenticationManager)
+                    AuthenticationView(
+                        viewModel: .init(
+                            baseUrl: Environment.local.baseURL,
+                            remoteDataLoader: remoteDataLoader,
+                            authenticationManager: authenticationManager
+                        )
+                    )
+                    .environment(authenticationManager)
                 }
             }
         }

@@ -11,4 +11,5 @@ public typealias HTTPClientResponse = (data: Data, response: HTTPURLResponse)
 
 public protocol HTTPClient {
     func get(from url: URL) async throws -> HTTPClientResponse
+    func post(request: URLRequest) async throws -> HTTPClientResponse
 }

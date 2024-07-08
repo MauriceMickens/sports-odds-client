@@ -12,10 +12,18 @@ import SwiftUI
 final class AuthenticationViewModel {
     var loadingState: LoadingState<DBUser, AuthUserError> = .idle
     
+    private let baseUrl: URL
+    private var remoteDataLoader: any DataLoader
     private var authenticationManager: AuthenticationManagerProtocol
     
-    init(authenticationManager: AuthenticationManagerProtocol) {
+    init(
+        baseUrl: URL,
+        remoteDataLoader: any DataLoader,
+        authenticationManager: AuthenticationManagerProtocol
+    ) {
+        self.baseUrl = baseUrl
         self.authenticationManager = authenticationManager
+        self.remoteDataLoader = remoteDataLoader
     }
     
     func signInGoogle() async {
@@ -25,8 +33,13 @@ final class AuthenticationViewModel {
             let tokens = try await helper.signIn()
             let authDataResult = try await authenticationManager.signInWithGoogle(tokens: tokens)
             let user = DBUser(auth: authDataResult)
-            try await UserManager.shared.createNewUser(user: user)
-            loadingState = .loaded(objects: user)
+            
+            guard let url = URL.makeCreateUserURL(base: baseUrl.absoluteString) else {
+                throw URLError(.badURL)
+            }
+            
+            let createdUser: DBUser = try await remoteDataLoader.post(url: url, body: user)
+            loadingState = .loaded(objects: createdUser)
             authenticationManager.isSignedIn = true
         } catch {
             handleError(error)
@@ -40,8 +53,13 @@ final class AuthenticationViewModel {
             let tokens = try await helper.startSignInWithAppleFlow()
             let authDataResult = try await authenticationManager.signInWithApple(tokens: tokens)
             let user = DBUser(auth: authDataResult)
-            try await UserManager.shared.createNewUser(user: user)
-            loadingState = .loaded(objects: user)
+            
+            guard let url = URL.makeCreateUserURL(base: baseUrl.absoluteString) else {
+                throw URLError(.badURL)
+            }
+            
+            let createdUser: DBUser = try await remoteDataLoader.post(url: url, body: user)
+            loadingState = .loaded(objects: createdUser)
             authenticationManager.isSignedIn = true
         } catch {
             handleError(error)

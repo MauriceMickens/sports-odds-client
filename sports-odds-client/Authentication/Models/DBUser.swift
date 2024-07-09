@@ -30,7 +30,6 @@ struct DBUser: Codable {
 
     init(
         userId: String,
-        isAnonymous: Bool? = nil,
         email: String? = nil,
         photoUrl: String? = nil,
         dateCreated: Date? = nil,
@@ -51,7 +50,6 @@ struct DBUser: Codable {
 
     enum CodingKeys: String, CodingKey {
         case userId = "user_id"
-        case isAnonymous = "is_anonymous"
         case email = "email"
         case photoUrl = "photo_url"
         case dateCreated = "date_created"
@@ -85,5 +83,13 @@ extension DBUser {
         try container.encodeIfPresent(self.preferences, forKey: .preferences)
         try container.encodeIfPresent(self.profileImagePath, forKey: .profileImagePath)
         try container.encodeIfPresent(self.profileImagePathUrl, forKey: .profileImagePathUrl)
+    }
+}
+
+extension JSONEncoder {
+    static var iso8601Encoder: JSONEncoder {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        return encoder
     }
 }

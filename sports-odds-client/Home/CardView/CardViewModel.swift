@@ -10,15 +10,15 @@ import SwiftUI
 
 @Observable
 class CardViewModel {
-    var playerImage: Image?
-    var isLoading: Bool = true
+    @MainActor var playerImage: Image?
+    @MainActor var isLoading: Bool = true
     
     private var cancellable: AnyCancellable?
     let odds: Odds
     
     init(odds: Odds) {
         self.odds = odds
-        loadImage()
+        Task { await loadImage() }
     }
     
     var playerName: String {
@@ -37,10 +37,19 @@ class CardViewModel {
         odds.gameDate.formatDate()
     }
     
+    var teamPowerRating: String {
+        String(format: "Team Power Rating: %.2f", odds.teamPowerRating)
+    }
+    
+    var opponentPowerRating: String {
+        String(format: "Opponent Power Rating: %.2f", odds.opponentPowerRating)
+    }
+    
     var bookmakers: [Bookmaker] {
         odds.bookmakers
     }
     
+    @MainActor
     private func loadImage() {
         guard let thumbnailURL = odds.playerImageUrls?.thumbnailURL else {
             self.playerImage = Image(systemName: "person.circle")

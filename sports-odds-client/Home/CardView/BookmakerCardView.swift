@@ -1,80 +1,71 @@
 //
-//  BookmakerCardView.swift
+//  ConsolidatedBookmakerCardView.swift
 //  sports-odds-client
 //
-//  Created by Mickens on 7/1/24.
+//  Created by Mickens on 7/13/24.
 //
 
-import Foundation
 import SwiftUI
 
 struct BookmakerCardView: View {
-    let bookmaker: Bookmaker
-    let selectedMarket: Market
-    
+    @State var viewModel: BookmakerCardViewModel
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            HStack {
-                Text("Bookmaker: \(bookmaker.bookmaker)")
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 5) {
+                Text(viewModel.bookmakerGroup.bookmakerName)
                     .font(.headline)
-                Spacer()
-                iconForExpectedValue(bookmaker.expectedValue)
+                    .padding(5)
+                    .background(Color.blue.opacity(0.1))
+                    .cornerRadius(5)
+                
+                Text("|")
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                
+                Text("\(viewModel.selectedMarket.description): \(viewModel.bookmakerGroup.bookmakers.first?.point ?? 0, specifier: "%.2f")")
+                    .font(.subheadline)
+                    .padding(5)
+                    .background(Color.green.opacity(0.1))
+                    .cornerRadius(5)
             }
-            HStack {
-                Text("Bet Type: \(bookmaker.betType)")
-                    .font(.subheadline)
-                Spacer()
-                Text("Price: \(bookmaker.price)")
-                    .font(.subheadline)
+            .padding(.bottom, 5)
+            
+            HStack(alignment: .top, spacing: 10) {
+                ForEach(viewModel.bookmakerGroup.bookmakers) { bookmaker in
+                    VStack(alignment: .leading, spacing: 5) {
+                        HStack {
+                            Text(viewModel.betType(bookmaker))
+                                .font(.subheadline)
+                            Spacer()
+                            viewModel.iconForExpectedValue(bookmaker.expectedValue)
+                        }
+                        Text(viewModel.odds(bookmaker))
+                            .font(.subheadline)
+                        Text(viewModel.probability(bookmaker))
+                            .font(.subheadline)
+                        Text(viewModel.profit(bookmaker))
+                            .font(.subheadline)
+                        Text(viewModel.expectedValue(bookmaker))
+                            .font(.subheadline)
+                            .foregroundColor(viewModel.colorForExpectedValue(bookmaker.expectedValue))
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(viewModel.colorForExpectedValue(bookmaker.expectedValue), lineWidth: 2)
+                    )
+                }
             }
-            HStack {
-                Text("\(selectedMarket.description): \(bookmaker.point, specifier: "%.2f")")
-                    .font(.subheadline)
-                Spacer()
-                Text("Probability of Win: \(bookmaker.impliedProbability * 100, specifier: "%.0f")%")
-                    .font(.subheadline)
+            
+            if let bookmaker = viewModel.bookmakerGroup.bookmakers.first {
+                Text(viewModel.lastUpdated(bookmaker))
+                    .font(.footnote)
+                    .foregroundColor(.gray)
             }
-            HStack {
-                Text("Profit: $\(bookmaker.amountWon, specifier: "%.2f") for every $1 bet")
-                    .font(.subheadline)
-                Spacer()
-                Text("Expected Value: \(bookmaker.expectedValue, specifier: "%.6f")")
-                    .font(.subheadline)
-                    .foregroundColor(colorForExpectedValue(bookmaker.expectedValue))
-            }
-            Text("Last Update: \(bookmaker.lastUpdate.formatDate())")
-                .font(.footnote)
-                .foregroundColor(.gray)
-        }
-        .padding()
-        .background(Color(UIColor.secondarySystemBackground))
-        .cornerRadius(10)
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(colorForExpectedValue(bookmaker.expectedValue), lineWidth: 2)
-        )
-    }
-    
-    private func colorForExpectedValue(_ value: Double) -> Color {
-        if value > 0 {
-            return Color.green
-        } else if value == 0 {
-            return Color.yellow
-        } else {
-            return Color.red
-        }
-    }
-    
-    private func iconForExpectedValue(_ value: Double) -> some View {
-        if value > 0 {
-            return Image(systemName: "hand.thumbsup.fill")
-                .foregroundColor(.green)
-        } else if value == 0 {
-            return Image(systemName: "hand.raised.fill")
-                .foregroundColor(.yellow)
-        } else {
-            return Image(systemName: "hand.thumbsdown.fill")
-                .foregroundColor(.red)
         }
     }
 }

@@ -14,3 +14,19 @@ struct Market: Identifiable, Decodable, Hashable {
 }
 
 extension Market: SelectableItem {}
+
+
+struct PlayerPerformance: Identifiable {
+    var id = UUID()
+    var game: String
+    var points: Double
+    var rebounds: Double
+    var assists: Double
+    var oddsOpening: Double
+    var oddsClosing: Double
+    var shootingPercentage: Double
+    var minutes: Double
+    var opponentDefensiveRating: Double // New
+    var opponentRanking: Int // New
+    var opponentWinLossRecord: String // New
+}

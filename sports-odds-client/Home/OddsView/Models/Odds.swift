@@ -13,6 +13,8 @@ struct Odds: Identifiable, Decodable, Hashable {
     let playerImageUrls: PlayerImageUrls?
     let bookmakers: [Bookmaker]
     let team: Team?
+    let teamPowerRating: Double
+    let opponentPowerRating: Double
     
     enum CodingKeys: String, CodingKey {
         case uniqueId = "unique_id"
@@ -26,6 +28,8 @@ struct Odds: Identifiable, Decodable, Hashable {
         case playerImageUrls = "player_image_urls"
         case bookmakers
         case team = "team_info"
+        case teamPowerRating = "team_power_rating"
+        case opponentPowerRating = "opponent_team_power_rating"
     }
     
     init(
@@ -40,7 +44,9 @@ struct Odds: Identifiable, Decodable, Hashable {
         sport: String,
         playerImageUrls: PlayerImageUrls?,
         bookmakers: [Bookmaker],
-        team: Team
+        team: Team,
+        teamPowerRating: Double = Double.random(in: 70.0...100.0),
+        opponentPowerRating: Double = Double.random(in: 70.0...100.0)
     ) {
         self.id = id
         self.uniqueId = uniqueId
@@ -54,6 +60,8 @@ struct Odds: Identifiable, Decodable, Hashable {
         self.playerImageUrls = playerImageUrls
         self.bookmakers = bookmakers
         self.team = team
+        self.teamPowerRating = teamPowerRating
+        self.opponentPowerRating = opponentPowerRating
     }
     
     init(from decoder: Decoder) throws {
@@ -70,6 +78,8 @@ struct Odds: Identifiable, Decodable, Hashable {
         playerImageUrls = try container.decodeIfPresent(PlayerImageUrls.self, forKey: .playerImageUrls)
         bookmakers = try container.decode([Bookmaker].self, forKey: .bookmakers)
         team = try container.decodeIfPresent(Team.self, forKey: .team)
+        self.teamPowerRating = Double.random(in: 70.0...100.0) // Mock data
+        self.opponentPowerRating = Double.random(in: 70.0...100.0) // Mock data
     }
     
     static var random: Odds {

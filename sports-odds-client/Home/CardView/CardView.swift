@@ -52,30 +52,53 @@ struct CardView: View {
             
             Divider()
             
+            HStack {
+                powerRatingView(
+                    label: "Power Rating",
+                    rating: viewModel.odds.teamPowerRating,
+                    isSwitch: true
+                )
+                powerRatingView(
+                    label: "Power Rating",
+                    rating: viewModel.odds.opponentPowerRating,
+                    isSwitch: false
+                )
+            }
+            .padding(.vertical, 5)
+            
+            Divider()
+            
             VStack(alignment: .leading, spacing: 10) {
-                ForEach(viewModel.bookmakers) { bookmaker in
+                ForEach(viewModel.bookmakers.groupedBookmakerGroups(by: { $0.bookmaker })) { groupedBookmaker in
                     BookmakerCardView(
-                        bookmaker: bookmaker,
-                        selectedMarket: selectedMarket
+                        viewModel: .init(
+                            bookmakerGroup: groupedBookmaker,
+                            selectedMarket: selectedMarket
+                        )
                     )
-                    .padding(.vertical, 5)
                 }
             }
             
             Spacer()
         }
-        .padding()
         .background(Color(UIColor.systemBackground))
         .cornerRadius(15)
         .shadow(radius: 5)
     }
-}
-
-#Preview {
-    CardView(
-        viewModel: .init(odds: Odds.random),
-        selectedMarket: .init(key: "points", description: "Points")
-    )
-        .padding()
-        .background(Color.black)
+    
+    private func powerRatingView(label: String, rating: Double, isSwitch: Bool) -> some View {
+        HStack {
+            Image(systemName: isSwitch ? "house.fill" : "person.fill")
+                .foregroundColor(.white)
+                .padding(6)
+                .background(isSwitch ? Color.green : Color.red)
+                .clipShape(Circle())
+            Text("\(label): \(rating, specifier: "%.2f")")
+                .font(.subheadline)
+                .padding(6)
+                .background(isSwitch ? Color.green.opacity(0.2) : Color.red.opacity(0.2))
+                .cornerRadius(10)
+        }
+        .padding(.horizontal, 10)
+    }
 }

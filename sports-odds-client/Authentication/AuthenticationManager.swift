@@ -57,6 +57,10 @@ final class AuthenticationManager: AuthenticationManagerProtocol {
         
         return AuthDataResultModel(user: user)
     }
+    
+    func isUserAuthenticated() -> Bool {
+        Auth.auth().currentUser != nil
+    }
         
     func getProviders() throws -> [AuthProviderOption] {
         guard let providerData = Auth.auth().currentUser?.providerData else {

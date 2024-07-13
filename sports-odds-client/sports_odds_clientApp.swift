@@ -20,7 +20,7 @@ struct sports_odds_clientApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if authenticationManager.isSignedIn {
+            if authenticationManager.isUserAuthenticated() {
                 MainTabView()
                     .environment(authenticationManager)
                     .environment(remoteDataLoader)

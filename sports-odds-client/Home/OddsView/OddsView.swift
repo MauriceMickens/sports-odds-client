@@ -44,7 +44,6 @@ struct OddsView: View {
                                 .onTapGesture {
                                     selectedOdds = odds
                                 }
-                                .padding(.horizontal)
                             }
                         case .error(let error):
                             Text(error.reason)
@@ -74,7 +73,7 @@ struct OddsView: View {
         .padding()
         .navigationBarTitle("Betlytics")
         .sheet(item: $selectedOdds) { odds in
-            CardDetailView(odds: odds)
+            CardDetailView()
         }
     }
 }

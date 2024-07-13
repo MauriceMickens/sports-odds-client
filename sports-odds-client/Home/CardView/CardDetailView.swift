@@ -5,22 +5,27 @@
 //  Created by Mickens on 7/3/24.
 //
 
+import Charts
 import Combine
 import SwiftUI
 
 struct CardDetailView: View {
-    @StateObject var viewModel: CardDetailViewModel
-    
-    init(odds: Odds) {
-        _viewModel = StateObject(wrappedValue: .init(odds: odds))
-    }
+    @State private var selectedSegment = 0
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Picker("", selection: $selectedSegment) {
+                Text("Fundamental Analysis").tag(0)
+                Text("Technical Analysis").tag(1)
+            }
+            .pickerStyle(.segmented)
+            .padding()
+            
+            if selectedSegment == 0 {
+                FundamentalAnalysisView()
+            } else if selectedSegment == 1 {
+                TechnicalAnalysisView()
+            }
+        }
     }
 }
-
-#Preview {
-    CardDetailView(odds: Odds.random)
-}
-
